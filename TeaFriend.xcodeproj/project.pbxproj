@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CD62901D77700D39EBE /* TeaFriendApp.swift */; };
-		BA5C0CD92901D77700D39EBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CD82901D77700D39EBE /* ContentView.swift */; };
+		BA5C0CD92901D77700D39EBE /* CoreDataDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CD82901D77700D39EBE /* CoreDataDemo.swift */; };
 		BA5C0CDB2901D77900D39EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5C0CDA2901D77900D39EBE /* Assets.xcassets */; };
 		BA5C0CDE2901D77900D39EBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5C0CDD2901D77900D39EBE /* Preview Assets.xcassets */; };
 		BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CDF2901D77900D39EBE /* Persistence.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		BA5C0CD32901D77700D39EBE /* TeaFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeaFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5C0CD62901D77700D39EBE /* TeaFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaFriendApp.swift; sourceTree = "<group>"; };
-		BA5C0CD82901D77700D39EBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BA5C0CD82901D77700D39EBE /* CoreDataDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDemo.swift; sourceTree = "<group>"; };
 		BA5C0CDA2901D77900D39EBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA5C0CDD2901D77900D39EBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA5C0CDF2901D77900D39EBE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5C0CD62901D77700D39EBE /* TeaFriendApp.swift */,
-				BA5C0CD82901D77700D39EBE /* ContentView.swift */,
+				BA5C0CD82901D77700D39EBE /* CoreDataDemo.swift */,
 				BA5C0CDA2901D77900D39EBE /* Assets.xcassets */,
 				BA5C0CDF2901D77900D39EBE /* Persistence.swift */,
 				BA5C0CE42901D77900D39EBE /* Info.plist */,
@@ -147,7 +147,7 @@
 			files = (
 				BA5C0CE32901D77900D39EBE /* TeaFriend.xcdatamodeld in Sources */,
 				BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */,
-				BA5C0CD92901D77700D39EBE /* ContentView.swift in Sources */,
+				BA5C0CD92901D77700D39EBE /* CoreDataDemo.swift in Sources */,
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
