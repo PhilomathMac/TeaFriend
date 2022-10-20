@@ -1,7 +1,7 @@
 # TeaFriend
 
 <p align="center">
-  <img src="https://github.com/PhilomathMac/Weatherly/blob/main/PortfolioImage.png?raw=true" alt="weatherly screenshot" width="100%"/>
+  <img src="https://github.com/PhilomathMac/TeaFriend/blob/main/PortfolioImage.png?raw=true" alt="teaFriend screenshot" width="100%"/>
 </p>
 
 ## Description
