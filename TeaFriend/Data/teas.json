@@ -1,0 +1,549 @@
+{
+  "teas" : [
+    {
+      "name" : "Orange Spice",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Sweet and spicy with cinnamon, orange peel, and cloves",
+      "stars" : 0
+    },
+    {
+      "name" : "Brown Sugar Bourbon",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Malty, sweet, and creamy with hints of vanilla",
+      "stars" : 0
+    },
+    {
+      "name" : "Pumpkin Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Cinnamon and clove with sweet pumpkin and caramel",
+      "stars" : 0
+    },
+    {
+      "name" : "Nepal Black",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Bold and smooth",
+      "stars" : 0
+    },
+    {
+      "name" : "Bohemian Raspberry",
+      "isLooseLeaf" : true,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Baked raspberry pastry with a hint of anis",
+      "stars" : 0
+    },
+    {
+      "name" : "Fortune Cookie Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Pu'erh",
+      "brand" : "David's Tea",
+      "description" : "Biscuity, buttery blend of warming sweet spices",
+      "stars" : 0
+    },
+    {
+      "name" : "Witchy Watermelon",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Watermelon and sweet potato that steeps a wicked purple",
+      "stars" : 0
+    },
+    {
+      "name" : "Vanilla Cappuccino",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Sweet, creamy, and energizing",
+      "stars" : 5
+    },
+    {
+      "name" : "Peanut Butter Cup",
+      "isLooseLeaf" : false,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Decadent blend of almonds and chocolate",
+      "stars" : 4
+    },
+    {
+      "name" : "Guangzhou Milk Oolong",
+      "isLooseLeaf" : false,
+      "teaType" : "Oolong",
+      "brand" : "David's Tea",
+      "description" : "Oolong with natural and artifical milk flavoring",
+      "stars" : 0
+    },
+    {
+      "name" : "Jasmine Rooibos",
+      "isLooseLeaf" : false,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Floral and uplifting",
+      "stars" : 0
+    },
+    {
+      "name" : "David's Breakfast Blend",
+      "isLooseLeaf" : false,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Classic, bold, and rich",
+      "stars" : 0
+    },
+    {
+      "name" : "Coffee Pu'erh",
+      "isLooseLeaf" : false,
+      "teaType" : "Pu'erh",
+      "brand" : "David's Tea",
+      "description" : "Rich, dark, and energizing",
+      "stars" : 0
+    },
+    {
+      "name" : "David's Chai",
+      "isLooseLeaf" : false,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Warm, spicy, and classic",
+      "stars" : 0
+    },
+    {
+      "name" : "Just Beet It",
+      "isLooseLeaf" : false,
+      "teaType" : "Maté",
+      "brand" : "David's Tea",
+      "description" : "Fruity, sweet, and energizing",
+      "stars" : 0
+    },
+    {
+      "name" : "Vanilla Cappuccino",
+      "isLooseLeaf" : false,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Sweet, creamy, and energizing",
+      "stars" : 5
+    },
+    {
+      "name" : "Sweet Harvest Pumpkin",
+      "isLooseLeaf" : false,
+      "teaType" : "Black",
+      "brand" : "Celestial Seasonings",
+      "description" : "Pumpkin, cinnamon, ginger, and nutmeg",
+      "stars" : 0
+    },
+    {
+      "name" : "Peppermint",
+      "isLooseLeaf" : false,
+      "teaType" : "Herbal",
+      "brand" : "Celestial Seasonings",
+      "description" : "Whistling cool freshness of simple mint",
+      "stars" : 0
+    },
+    {
+      "name" : "Lavender Mint",
+      "isLooseLeaf" : false,
+      "teaType" : "Herbal",
+      "brand" : "Rishi",
+      "description" : "Sweet peppermint, clarifying sage, calming lavender, and a hint of licorice",
+      "stars" : 0
+    },
+    {
+      "name" : "Cocoa Mint",
+      "isLooseLeaf" : false,
+      "teaType" : "Herbal",
+      "brand" : "Rishi",
+      "description" : "Sumptuous cocoa shells, sweet peppermint, and a touch of cinnamon and cloves",
+      "stars" : 0
+    },
+    {
+      "name" : "Lavender Buttercream",
+      "isLooseLeaf" : false,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Sweet, creamy, and floral",
+      "stars" : 0
+    },
+    {
+      "name" : "S'mores Chai",
+      "isLooseLeaf" : false,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Rich, toasty, and chocolaty",
+      "stars" : 5
+    },
+    {
+      "name" : "Cardamom French Toast",
+      "isLooseLeaf" : false,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Sweet, rich, and decadent",
+      "stars" : 5
+    },
+    {
+      "name" : "Strawberry Rhubarb Parfait",
+      "isLooseLeaf" : false,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Tart, creamy, and sweet",
+      "stars" : 0
+    },
+    {
+      "name" : "Forever Nuts",
+      "isLooseLeaf" : false,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Nutty, sweet, and addictive",
+      "stars" : 0
+    },
+    {
+      "name" : "Green Mango Peach",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "Tea Forte",
+      "description" : "Sweetness of ripe fruit sharpened by peppermint and ginger",
+      "stars" : 5
+    },
+    {
+      "name" : "Green Mango Peach",
+      "isLooseLeaf" : false,
+      "teaType" : "Green",
+      "brand" : "Tea Forte",
+      "description" : "Sweetness of ripe fruit sharpened by peppermint and ginger",
+      "stars" : 5
+    },
+    {
+      "name" : "Maracuja Mango",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Exotic passion fruit and sunny mango",
+      "stars" : 5
+    },
+    {
+      "name" : "Wild Raspberry",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Waspberry, pomegranate, and hibiscus",
+      "stars" : 4
+    },
+    {
+      "name" : "Dragonfruit Aloe",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Hydrating and soothing detox",
+      "stars" : 5
+    },
+    {
+      "name" : "Whipped Coconut",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Coconus and toasted marshmallo",
+      "stars" : 5
+    },
+    {
+      "name" : "Very Cherry",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Bright and tart",
+      "stars" : 3
+    },
+    {
+      "name" : "Jessie's Tea",
+      "isLooseLeaf" : true,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Lavender and coconut",
+      "stars" : 4
+    },
+    {
+      "name" : "Organic David's Breakfast Blend",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Classic, Bold, Rich",
+      "stars" : 4
+    },
+    {
+      "name" : "Gaba Guava",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Guava, pineapple, coconut, and orange",
+      "stars" : 5
+    },
+    {
+      "name" : "Silver Bell Oolong",
+      "isLooseLeaf" : true,
+      "teaType" : "Oolong",
+      "brand" : "David's Tea",
+      "description" : "Creamy, floral, and zen",
+      "stars" : 0
+    },
+    {
+      "name" : "Guangzhou Milk Oolong",
+      "isLooseLeaf" : true,
+      "teaType" : "Oolong",
+      "brand" : "David's Tea",
+      "description" : "Creamy, smooth, and crisp",
+      "stars" : 0
+    },
+    {
+      "name" : "Jasmine Rooibos",
+      "isLooseLeaf" : true,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Lemongrass, jasmine, and hibiscus",
+      "stars" : 0
+    },
+    {
+      "name" : "Toasted Marshmallow",
+      "isLooseLeaf" : true,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Chocolate, Chicory, Licorice, and Marshmallow",
+      "stars" : 0
+    },
+    {
+      "name" : "Sunny C",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Orange and carrot",
+      "stars" : 0
+    },
+    {
+      "name" : "Stormy Night",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Dark Chocolate, cinnamon, and coconut",
+      "stars" : 2
+    },
+    {
+      "name" : "Peach Zing",
+      "isLooseLeaf" : true,
+      "teaType" : "Herbal",
+      "brand" : "David's Tea",
+      "description" : "Ginger and peach",
+      "stars" : 0
+    },
+    {
+      "name" : "Strawberry Kiwi Capri",
+      "isLooseLeaf" : true,
+      "teaType" : "White",
+      "brand" : "David's Tea",
+      "description" : "Fruity, sunny, and fun",
+      "stars" : 0
+    },
+    {
+      "name" : "Throat Rescue",
+      "isLooseLeaf" : true,
+      "teaType" : "Rooibos",
+      "brand" : "Herbal",
+      "description" : "Soothing, sweet, and minty",
+      "stars" : 0
+    },
+    {
+      "name" : "Cold 911",
+      "isLooseLeaf" : true,
+      "teaType" : "Herbal",
+      "brand" : "David's Tea",
+      "description" : "Peppermint, juniper, and eucalyptus",
+      "stars" : 0
+    },
+    {
+      "name" : "Organic David's Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Warm, spicy, classic",
+      "stars" : 0
+    },
+    {
+      "name" : "Zen Pearls",
+      "isLooseLeaf" : true,
+      "teaType" : "White",
+      "brand" : "David's Tea",
+      "description" : "Calming jasmine bliss",
+      "stars" : 0
+    },
+    {
+      "name" : "Elf Help",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Black currant, orange, papaya, ad coconut",
+      "stars" : 0
+    },
+    {
+      "name" : "Chocolate Rocket",
+      "isLooseLeaf" : true,
+      "teaType" : "Maté",
+      "brand" : "David's Tea",
+      "description" : "Cocoa and almond",
+      "stars" : 4
+    },
+    {
+      "name" : "Vanilla Bean Black",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Coconut, vanilla, and cream",
+      "stars" : 5
+    },
+    {
+      "name" : "Matcha Ice Cream",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "David's Tea",
+      "description" : "Sweet and creamy",
+      "stars" : 4
+    },
+    {
+      "name" : "Cinnamon Rooibos Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Rooibos",
+      "brand" : "David's Tea",
+      "description" : "Cinnamony",
+      "stars" : 0
+    },
+    {
+      "name" : "Sleepy Lychee",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Lemongrass, carrot, apple, lychee, and jasmine",
+      "stars" : 0
+    },
+    {
+      "name" : "Guava Cadabra",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Mango and guava",
+      "stars" : 0
+    },
+    {
+      "name" : "Blueberry Pancakes",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Maple and blueberry",
+      "stars" : 5
+    },
+    {
+      "name" : "Jumpy Monkey",
+      "isLooseLeaf" : true,
+      "teaType" : "Maté",
+      "brand" : "David's Tea",
+      "description" : "White mocha",
+      "stars" : 4
+    },
+    {
+      "name" : "Cream of Early Grey",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Rich, creamy, and classic",
+      "stars" : 5
+    },
+    {
+      "name" : "Jinggle Bell Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "White chocolate and spices",
+      "stars" : 0
+    },
+    {
+      "name" : "Mother's Little Helper",
+      "isLooseLeaf" : true,
+      "teaType" : "Herbal",
+      "brand" : "David's Tea",
+      "description" : "Minty, citrusy, and relaxing",
+      "stars" : 0
+    },
+    {
+      "name" : "Blueberry Vanilla",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Sweet and creamy blueberry",
+      "stars" : 5
+    },
+    {
+      "name" : "Saigon Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Ginger, cardamom, peppercorn, clove",
+      "stars" : 5
+    },
+    {
+      "name" : "Chocolate Chili Chai",
+      "isLooseLeaf" : true,
+      "teaType" : "Black",
+      "brand" : "David's Tea",
+      "description" : "Spicy Hot Chocolate",
+      "stars" : 2
+    },
+    {
+      "name" : "Caramel Shortbread",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Buttery almond cookie",
+      "stars" : 4
+    },
+    {
+      "name" : "Pink Velvet Cake",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "White chocolate, hibiscus, apple, rosehip",
+      "stars" : 0
+    },
+    {
+      "name" : "Reishi Relax",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Apple, pineapple, lemon balm, and mushroom",
+      "stars" : 0
+    },
+    {
+      "name" : "Merry Mistletoe",
+      "isLooseLeaf" : true,
+      "teaType" : "White",
+      "brand" : "David's Tea",
+      "description" : "Tart cranberry and spice",
+      "stars" : 0
+    },
+    {
+      "name" : "Nordic Berry",
+      "isLooseLeaf" : true,
+      "teaType" : "Fruit",
+      "brand" : "David's Tea",
+      "description" : "Vibrant, fruity, and calming",
+      "stars" : 0
+    },
+    {
+      "name" : "Jasmine",
+      "isLooseLeaf" : true,
+      "teaType" : "Green",
+      "brand" : "SF Tea Garden",
+      "description" : "Zen and calm",
+      "stars" : 5
+    }
+  ]
+}
+

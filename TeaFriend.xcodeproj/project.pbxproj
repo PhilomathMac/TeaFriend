@@ -16,6 +16,7 @@
 		BA6A223629076B2800AFB230 /* Tea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223529076B2800AFB230 /* Tea.swift */; };
 		BA6A223829076BA500AFB230 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223729076BA500AFB230 /* ListView.swift */; };
 		BA6A223A29076FCB00AFB230 /* TeaCardEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223929076FCB00AFB230 /* TeaCardEditable.swift */; };
+		BA6A223C2907745D00AFB230 /* teas.json in Resources */ = {isa = PBXBuildFile; fileRef = BA6A223B2907745C00AFB230 /* teas.json */; };
 		BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15692901DC8600C09370 /* TeaCard.swift */; };
 		BADF156C2901DF6200C09370 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF156B2901DF6200C09370 /* RatingView.swift */; };
 		BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15702901E3A800C09370 /* TeaFormat.swift */; };
@@ -34,6 +35,7 @@
 		BA6A223529076B2800AFB230 /* Tea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tea.swift; sourceTree = "<group>"; };
 		BA6A223729076BA500AFB230 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		BA6A223929076FCB00AFB230 /* TeaCardEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaCardEditable.swift; sourceTree = "<group>"; };
+		BA6A223B2907745C00AFB230 /* teas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teas.json; sourceTree = "<group>"; };
 		BADF15692901DC8600C09370 /* TeaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaCard.swift; sourceTree = "<group>"; };
 		BADF156B2901DF6200C09370 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		BADF15702901E3A800C09370 /* TeaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaFormat.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				BA5C0CDF2901D77900D39EBE /* Persistence.swift */,
 				BA5C0CE12901D77900D39EBE /* TeaFriend.xcdatamodeld */,
+				BA6A223B2907745C00AFB230 /* teas.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				BA5C0CDE2901D77900D39EBE /* Preview Assets.xcassets in Resources */,
 				BA5C0CDB2901D77900D39EBE /* Assets.xcassets in Resources */,
+				BA6A223C2907745D00AFB230 /* teas.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
