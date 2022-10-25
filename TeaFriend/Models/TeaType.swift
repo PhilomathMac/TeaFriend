@@ -8,5 +8,5 @@
 import Foundation
 
 enum TeaType {
-    case Black, Green, Fruit, Herbal, Roobios, White
+    case Black, Green, Fruit, Herbal, Roobios, White, Other
 }

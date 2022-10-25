@@ -24,6 +24,8 @@ struct TeaCard: View {
             return Color.brown
         case .White:
             return Color.gray
+        case .Other:
+            return Color.red
         }
     }
     
@@ -34,20 +36,27 @@ struct TeaCard: View {
                 // Tea Details
                 VStack(alignment: .leading) {
                     
-                    VStack(alignment: .center) {
-                        Image(systemName: "cup.and.saucer.fill")
-                            .resizable()
-                            .frame(width: 100, height: 90)
-                            .aspectRatio(contentMode: .fit)
-                            .padding()
-                            .foregroundColor(accentColor)
+                    
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Image(systemName: "cup.and.saucer.fill")
+                                .resizable()
+                                .frame(width: 100, height: 90)
+                                .aspectRatio(contentMode: .fit)
+                                .padding()
+                                .foregroundColor(accentColor)
+                            Text(tea.name)
+                                .font(.title)
+                                .padding(.vertical, 10)
+                            Text(tea.description)
+                                .italic()
+                                .padding(.bottom, 10)
+                        }
+                        Spacer()
                         
-                        Text(tea.name)
-                            .font(.title)
-                            .padding(.vertical, 10)
-                        Text(tea.description)
-                            .italic()
-                            .padding(.bottom, 10)
+                        
+                        
                     }
                     
                     Divider()
@@ -101,7 +110,7 @@ struct TeaCard: View {
                     
                 }
                 .padding()
-                
+                Spacer()
                 Button {
                     
                 } label: {
@@ -122,6 +131,6 @@ struct TeaCard: View {
 
 struct TeaCard_Previews: PreviewProvider {
     static var previews: some View {
-        TeaCard(tea: Tea(name: "Orange Spice", description: "Sweet and spicy with cinnamon, orange peel, and cloves", type: .Green, format: .looseLeaf, notes: "Like this one a lot", rating: 4))
+        TeaCard(tea: Tea(name: "Orange Spice", description: "Sweet and spicy with cinnamon, orange peel, and cloves", brand: "David's", typeString: "Green", format: .looseLeaf, notes: "Like this one a lot", rating: 4))
     }
 }

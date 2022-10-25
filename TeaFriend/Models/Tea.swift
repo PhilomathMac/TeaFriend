@@ -11,25 +11,30 @@ struct Tea: Identifiable {
     var id = UUID()
     var name: String
     var description: String
-    var type: TeaType
-    var typeString: String {
-        switch type {
-        case .Black:
-            return "Black"
-        case .Green:
-            return "Green"
-        case .Fruit:
-            return "Fruit"
-        case .Herbal:
-            return "Herbal"
-        case .Roobios:
-            return "Roobios"
-        case .White:
-            return "White"
-        }
-    }
+    var brand: String
+    var typeString: String
     var format: TeaFormat
     var notes: String
     var rating: Int
+    
+    var type: TeaType {
+        switch typeString {
+        case "Black", "black":
+            return TeaType.Black
+        case "Green", "green":
+            return TeaType.Green
+        case "Fruit", "fruit":
+            return TeaType.Fruit
+        case "Herbal", "herbal":
+            return TeaType.Herbal
+        case "Roobios", "roobios":
+            return TeaType.Roobios
+        case "White", "white":
+            return TeaType.White
+        default:
+            return TeaType.Other
+        }        
+    }
+    
     
 }

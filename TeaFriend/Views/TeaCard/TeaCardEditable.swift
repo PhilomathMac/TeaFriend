@@ -11,22 +11,7 @@ struct TeaCardEditable: View {
     
     @State var teaFormat: TeaFormat = .looseLeaf
     @State var teaType: TeaType = .Green
-    var teaTypeString: String {
-        switch teaType {
-        case .Black:
-            return "Black"
-        case .Green:
-            return "Green"
-        case .Fruit:
-            return "Fruit"
-        case .Herbal:
-            return "Herbal"
-        case .Roobios:
-            return "Roobios"
-        case .White:
-            return "White"
-        }
-    }
+    
     @State var teaNotes: String = "User notes about this tea"
     @State var teaDescription: String = "Some flowery language about the main flavor notes of this tea."
     @State var teaName: String = "Tea Name"
@@ -46,6 +31,8 @@ struct TeaCardEditable: View {
             return Color.brown
         case .White:
             return Color.gray
+        case .Other:
+            return Color.red
         }
     }
     
