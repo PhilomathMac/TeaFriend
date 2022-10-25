@@ -13,8 +13,9 @@ struct TeaFriendApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CoreDataDemo()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TeaCard()
+//            CoreDataDemo()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

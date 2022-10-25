@@ -13,6 +13,10 @@
 		BA5C0CDE2901D77900D39EBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5C0CDD2901D77900D39EBE /* Preview Assets.xcassets */; };
 		BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CDF2901D77900D39EBE /* Persistence.swift */; };
 		BA5C0CE32901D77900D39EBE /* TeaFriend.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CE12901D77900D39EBE /* TeaFriend.xcdatamodeld */; };
+		BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15692901DC8600C09370 /* TeaCard.swift */; };
+		BADF156C2901DF6200C09370 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF156B2901DF6200C09370 /* RatingView.swift */; };
+		BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15702901E3A800C09370 /* TeaFormat.swift */; };
+		BADF1573290209C200C09370 /* TeaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF1572290209C200C09370 /* TeaType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		BA5C0CDF2901D77900D39EBE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BA5C0CE22901D77900D39EBE /* TeaFriend.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeaFriend.xcdatamodel; sourceTree = "<group>"; };
 		BA5C0CE42901D77900D39EBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADF15692901DC8600C09370 /* TeaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaCard.swift; sourceTree = "<group>"; };
+		BADF156B2901DF6200C09370 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		BADF15702901E3A800C09370 /* TeaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaFormat.swift; sourceTree = "<group>"; };
+		BADF1572290209C200C09370 /* TeaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 		BA5C0CEA2901DBA100D39EBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BADF156D2901E02100C09370 /* TeaCard */,
 				BA5C0CD82901D77700D39EBE /* CoreDataDemo.swift */,
 			);
 			path = Views;
@@ -88,6 +97,8 @@
 		BA5C0CEB2901DBAD00D39EBE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BADF15702901E3A800C09370 /* TeaFormat.swift */,
+				BADF1572290209C200C09370 /* TeaType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +124,15 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BADF156D2901E02100C09370 /* TeaCard */ = {
+			isa = PBXGroup;
+			children = (
+				BADF15692901DC8600C09370 /* TeaCard.swift */,
+				BADF156B2901DF6200C09370 /* RatingView.swift */,
+			);
+			path = TeaCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +208,11 @@
 				BA5C0CE32901D77900D39EBE /* TeaFriend.xcdatamodeld in Sources */,
 				BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */,
 				BA5C0CD92901D77700D39EBE /* CoreDataDemo.swift in Sources */,
+				BADF156C2901DF6200C09370 /* RatingView.swift in Sources */,
+				BADF1573290209C200C09370 /* TeaType.swift in Sources */,
+				BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */,
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,
+				BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
