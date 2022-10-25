@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Tea {
+struct Tea: Identifiable {
     var id = UUID()
     var name: String
     var description: String
