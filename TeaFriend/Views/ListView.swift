@@ -21,7 +21,7 @@ struct ListView: View {
             VStack {
                 List(dummyData) { tea in
                     NavigationLink {
-                        TeaCard()
+                        TeaCard(tea: tea)
                     } label: {
                         Text(tea.name)
                     }
