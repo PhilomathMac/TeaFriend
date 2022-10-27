@@ -7,6 +7,12 @@
 
 import Foundation
 
-enum TeaType {
-    case Black, Green, Fruit, Herbal, Roobios, White, Other
+enum TeaType: String {
+    case Black = "Black"
+    case Green = "Green"
+    case Fruit = "Fruit"
+    case Herbal = "Herbal"
+    case Roobios = "Roobios"
+    case White = "White"
+    case Other = "Other"
 }

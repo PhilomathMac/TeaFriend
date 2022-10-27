@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct RatingView: View {
-    @State var teaRating: Int
+    var teaRating: Int
     var onColor = Color(.systemYellow)
     var offColor = Color(.systemGray)
     
     var body: some View {
         HStack {
             ForEach(0 ..< 5, id: \.self) { num in
-                Button {
-                    teaRating = num + 1
-                } label: {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(num < teaRating ? onColor : offColor)
-                }
-
+                Image(systemName: "star.fill")
+                    .foregroundColor(num < teaRating ? onColor : offColor)
             }
         }
     }

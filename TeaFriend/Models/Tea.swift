@@ -6,34 +6,35 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Tea: Identifiable {
+struct Tea: Identifiable, Equatable {
     var id = UUID()
     var name: String
     var description: String
     var brand: String
-    var typeString: String
+    var type: TeaType
     var format: TeaFormat
     var notes: String
     var rating: Int
     
-    var type: TeaType {
-        switch typeString {
-        case "Black", "black":
-            return TeaType.Black
-        case "Green", "green":
-            return TeaType.Green
-        case "Fruit", "fruit":
-            return TeaType.Fruit
-        case "Herbal", "herbal":
-            return TeaType.Herbal
-        case "Roobios", "roobios":
-            return TeaType.Roobios
-        case "White", "white":
-            return TeaType.White
-        default:
-            return TeaType.Other
-        }        
+    var accentColor: Color {
+        switch type {
+        case .Black:
+            return Color.black
+        case .Green:
+            return Color.green
+        case .Fruit:
+            return Color.yellow
+        case .Herbal:
+            return Color.yellow
+        case .Roobios:
+            return Color.brown
+        case .White:
+            return Color.gray
+        case .Other:
+            return Color.red
+        }
     }
     
     

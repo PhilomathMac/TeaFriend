@@ -9,31 +9,36 @@ import SwiftUI
 
 struct TeaCardEditable: View {
     
-    @State var teaFormat: TeaFormat = .looseLeaf
-    @State var teaType: TeaType = .Green
+    var tea: Tea?
+    @EnvironmentObject var model: TeaModel
+    @Environment(\.dismiss) private var dismiss
     
-    @State var teaNotes: String = "User notes about this tea"
-    @State var teaDescription: String = "Some flowery language about the main flavor notes of this tea."
-    @State var teaName: String = "Tea Name"
+    @State private var teaFormat: TeaFormat
+    @State private var teaType: TeaType
+    @State private var teaNotes: String
+    @State private var teaDescription: String
+    @State private var teaName: String
+    @State private var errorDisplayed = false
+    @State private var teaRating: Int
     
+    init(_ tea: Tea) {
+        self.tea = tea
+        _teaFormat = State(initialValue: tea.format)
+        _teaType = State(initialValue: tea.type)
+        _teaNotes = State(initialValue: tea.notes)
+        _teaDescription = State(initialValue: tea.description)
+        _teaName = State(initialValue: tea.name)
+        _teaRating = State(initialValue: tea.rating)
+    }
     
-    var teaColor: Color {
-        switch teaType {
-        case .Black:
-            return Color.black
-        case .Green:
-            return Color.green
-        case .Fruit:
-            return Color.yellow
-        case .Herbal:
-            return Color.yellow
-        case .Roobios:
-            return Color.brown
-        case .White:
-            return Color.gray
-        case .Other:
-            return Color.red
-        }
+    init() {
+        self.tea = nil
+        _teaFormat = State(initialValue: .looseLeaf)
+        _teaType = State(initialValue: .Black)
+        _teaNotes = State(initialValue: "")
+        _teaDescription = State(initialValue: "")
+        _teaName = State(initialValue: "")
+        _teaRating = State(initialValue: 0)
     }
     
     var body: some View {
@@ -46,12 +51,17 @@ struct TeaCardEditable: View {
                     .frame(width: 100, height: 90)
                     .aspectRatio(contentMode: .fit)
                     .padding()
-                    .foregroundColor(teaColor)
+                    .foregroundColor(tea != nil ? tea!.accentColor : .black)
                 
-                TextField("Title", text: $teaName)
+                TextField("Name", text: $teaName, prompt: Text("Tea Name"))
                     .font(.title)
-                TextEditor(text: $teaDescription)
+                    .padding(.top, 20)
+                    .padding(.bottom, 10)
+                
+                TextField("Description", text: $teaDescription, prompt: Text("Description"), axis: .vertical)
+                    .lineLimit(1...5)
                     .italic()
+                    .padding(.bottom, 20)
                 
                 Divider()
                     .padding(.vertical, 10)
@@ -59,7 +69,7 @@ struct TeaCardEditable: View {
                     Text("Rating:")
                         .bold()
                     Spacer()
-                    RatingView(teaRating: 4)
+                    RatingButtons(teaRating: $teaRating)
                 }
                 
                 // Tea Type
@@ -71,8 +81,9 @@ struct TeaCardEditable: View {
                         Text("Black").tag(TeaType.Black)
                         Text("Green").tag(TeaType.Green)
                         Text("Roobios").tag(TeaType.Roobios)
-                        Text("Fruit/Herbal").tag(4)
-                        Text("Roobios").tag(5)
+                        Text("Fruit/Herbal").tag(TeaType.Herbal)
+                        Text("Roobios").tag(TeaType.Roobios)
+                        Text("Other").tag(TeaType.Other)
                     }
                 }
                 
@@ -92,23 +103,44 @@ struct TeaCardEditable: View {
                 Divider()
                     .padding(.vertical, 10)
                 
-                VStack(alignment: .leading) {
-                    Text("Notes:")
-                        .bold()
-                    TextEditor(text: $teaNotes)
-                }
-                
             }
             .padding()
+            
+            // Tea Notes
+            VStack(alignment: .leading) {
+                Text("Notes:")
+                    .bold()
+                TextEditor(text: $teaNotes)
+                    .padding(EdgeInsets(top: 7, leading: 7, bottom: 0, trailing: 0))
+                    .border(Color.gray.opacity(0.25), width: 2)
+            }
+            .padding([.horizontal, .bottom])
+            
             
             // Button
             HStack {
                 Spacer()
                 Button {
-                    // Save Tea
+                    // validate user input
+                    if validateUserInput() {
+                        // save tea
+                        if tea != nil {
+                            // Edit Tea
+                            model.editTea(teaToEdit: tea!, name: teaName, description: teaDescription, brand: "", type: teaType, format: teaFormat, notes: teaNotes, rating: teaRating)
+                        } else {
+                            // Add Tea
+                            model.addTea(name: teaName, description: teaDescription, brand: "", type: teaType, format: teaFormat, notes: teaNotes, rating: teaRating)
+                        }
+                        // dismiss view
+                        dismiss()
+                    } else {
+                       errorDisplayed = true
+                    }
+                    
                 } label: {
                     Text("Save")
                         .padding()
+                        .padding(.horizontal, 20)
                         .bold()
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -117,6 +149,7 @@ struct TeaCardEditable: View {
                 Spacer()
                 Button {
                     // Return to non-editable version without saving
+                    dismiss()
                 } label: {
                     Text("Cancel")
                         .foregroundColor(.red)
@@ -125,13 +158,26 @@ struct TeaCardEditable: View {
             }
             
         }
+        .alert("Oops!", isPresented: $errorDisplayed) {
+            // default ok action
+        } message: {
+            Text("Every tea has to at least have a name!")
+        }
+
+    }
+    
+    private func validateUserInput() -> Bool {
+        guard !teaName.isEmpty else {
+            return false
+        }
+        return true
     }
     
 }
-    
-    
-    struct TeaCardEditable_Previews: PreviewProvider {
-        static var previews: some View {
-            TeaCardEditable()
-        }
+
+
+struct TeaCardEditable_Previews: PreviewProvider {
+    static var previews: some View {
+        TeaCardEditable()
     }
+}

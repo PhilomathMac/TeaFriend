@@ -23,6 +23,7 @@
 		BADF156C2901DF6200C09370 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF156B2901DF6200C09370 /* RatingView.swift */; };
 		BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15702901E3A800C09370 /* TeaFormat.swift */; };
 		BADF1573290209C200C09370 /* TeaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF1572290209C200C09370 /* TeaType.swift */; };
+		BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAD7482909C87C0003244E /* RatingButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BADF156B2901DF6200C09370 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		BADF15702901E3A800C09370 /* TeaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaFormat.swift; sourceTree = "<group>"; };
 		BADF1572290209C200C09370 /* TeaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaType.swift; sourceTree = "<group>"; };
+		BAFAD7482909C87C0003244E /* RatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				BADF15692901DC8600C09370 /* TeaCard.swift */,
 				BADF156B2901DF6200C09370 /* RatingView.swift */,
+				BAFAD7482909C87C0003244E /* RatingButtons.swift */,
 				BA6A223929076FCB00AFB230 /* TeaCardEditable.swift */,
 			);
 			path = TeaCard;
@@ -236,6 +239,7 @@
 				BA99B84729085A6300F3255C /* TeaModel.swift in Sources */,
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,
 				BA6A223A29076FCB00AFB230 /* TeaCardEditable.swift in Sources */,
+				BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */,
 				BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
