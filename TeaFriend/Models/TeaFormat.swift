@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum TeaFormat {
-    case looseLeaf, teaBag
+enum TeaFormat: String {
+    case looseLeaf = "looseLeaf"
+    case teaBag = "teaBag"
 }

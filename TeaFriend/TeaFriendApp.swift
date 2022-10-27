@@ -15,8 +15,7 @@ struct TeaFriendApp: App {
         WindowGroup {
             ListView()
                 .environmentObject(TeaModel())
-//            CoreDataDemo()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
