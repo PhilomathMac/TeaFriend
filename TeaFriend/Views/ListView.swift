@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ListView: View {
-    @EnvironmentObject var model: TeaModel
+    @EnvironmentObject var model: ViewModel
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: []) var teas: FetchedResults<Tea>
     
     @State private var isShowingAddTea = false
     
@@ -43,6 +45,6 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView()
-            .environmentObject(TeaModel())
+            .environmentObject(ViewModel())
     }
 }

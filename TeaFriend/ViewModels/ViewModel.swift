@@ -7,8 +7,8 @@
 
 import Foundation
 
-class TeaModel: ObservableObject {
-    @Published var allTeas: [Tea] = [Tea]()
+class ViewModel: ObservableObject {
+    @Published var allTeas: [TeaModel] = [TeaModel]()
     
     init() {
         parseJSON()
@@ -32,7 +32,7 @@ class TeaModel: ObservableObject {
         do {
             
             let decodedTeas = try decoder.decode([DecodedTea].self, from: data)
-            var newTeas = [Tea]()
+            var newTeas = [TeaModel]()
             for tea in decodedTeas {
                 let teaType: TeaType
                 
@@ -53,7 +53,7 @@ class TeaModel: ObservableObject {
                     teaType =  TeaType.Other
                 }
                 
-                let newTea = Tea(
+                let newTea = TeaModel(
                 name: tea.name,
                 description: tea.description,
                 brand: tea.brand,
@@ -75,11 +75,11 @@ class TeaModel: ObservableObject {
 }
     
     func addTea(name: String, description: String, brand: String, type: TeaType, format: TeaFormat, notes: String, rating: Int) {
-        let newTea = Tea(name: name, description: description, brand: brand, type: type, format: format, notes: notes, rating: rating)
+        let newTea = TeaModel(name: name, description: description, brand: brand, type: type, format: format, notes: notes, rating: rating)
         allTeas.append(newTea)
     }
     
-    func editTea(teaToEdit: Tea, name: String, description: String, brand: String, type: TeaType, format: TeaFormat, notes: String, rating: Int) {
+    func editTea(teaToEdit: TeaModel, name: String, description: String, brand: String, type: TeaType, format: TeaFormat, notes: String, rating: Int) {
         if let index = allTeas.firstIndex(where: { tea in
             tea == teaToEdit
         }) {

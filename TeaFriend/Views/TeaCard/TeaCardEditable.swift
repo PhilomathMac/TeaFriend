@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TeaCardEditable: View {
     
-    var tea: Tea?
-    @EnvironmentObject var model: TeaModel
+    var tea: TeaModel?
+    @EnvironmentObject var model: ViewModel
     @Environment(\.dismiss) private var dismiss
     
     @State private var teaFormat: TeaFormat
@@ -21,7 +21,7 @@ struct TeaCardEditable: View {
     @State private var errorDisplayed = false
     @State private var teaRating: Int
     
-    init(_ tea: Tea) {
+    init(_ tea: TeaModel) {
         self.tea = tea
         _teaFormat = State(initialValue: tea.format)
         _teaType = State(initialValue: tea.type)

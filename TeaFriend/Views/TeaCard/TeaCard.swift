@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeaCard: View {
     
-    let tea: Tea
+    let tea: TeaModel
     @State private var isShowingEditTea = false
     
     var body: some View {
@@ -115,6 +115,6 @@ struct TeaCard: View {
 
 struct TeaCard_Previews: PreviewProvider {
     static var previews: some View {
-        TeaCard(tea: Tea(name: "Orange Spice", description: "Sweet and spicy with cinnamon, orange peel, and cloves", brand: "David's", type: .Green, format: .looseLeaf, notes: "Like this one a lot", rating: 4))
+        TeaCard(tea: TeaModel(name: "Orange Spice", description: "Sweet and spicy with cinnamon, orange peel, and cloves", brand: "David's", type: .Green, format: .looseLeaf, notes: "Like this one a lot", rating: 4))
     }
 }

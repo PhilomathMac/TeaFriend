@@ -14,7 +14,7 @@ struct TeaFriendApp: App {
     var body: some Scene {
         WindowGroup {
             ListView()
-                .environmentObject(TeaModel())
+                .environmentObject(ViewModel())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
