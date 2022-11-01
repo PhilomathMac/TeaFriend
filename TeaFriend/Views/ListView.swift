@@ -10,18 +10,18 @@ import SwiftUI
 struct ListView: View {
     @EnvironmentObject var model: ViewModel
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: []) var teas: FetchedResults<Tea>
+    @FetchRequest(sortDescriptors: []) var allTeas: FetchedResults<Tea>
     
     @State private var isShowingAddTea = false
     
     var body: some View {
         NavigationView {
             VStack {
-                List(model.allTeas) { tea in
+                List(allTeas) { tea in
                     NavigationLink {
                         TeaCard(tea: tea)
                     } label: {
-                        Text(tea.name)
+                        Text(tea.name ?? "Error")
                     }
 
                 }
@@ -39,6 +39,19 @@ struct ListView: View {
 
             }
         }
+    }
+    
+    func convertToTeaModel(coreDataTea: Tea) -> TeaModel {
+        let newTea = TeaModel(
+            name: coreDataTea.name ?? "Error",
+            description: coreDataTea.description ,
+            brand: coreDataTea.brand ?? "Error",
+            type: TeaType(rawValue: coreDataTea.type!) ?? .Other,
+            format: TeaFormat(rawValue: coreDataTea.format!) ?? .teaBag,
+            notes: coreDataTea.notes ?? "Error",
+            rating: Int(coreDataTea.rating )
+        )
+        return newTea
     }
 }
 
