@@ -11,12 +11,13 @@ A SwiftUI app to store all the types of tea you own, sort and search your teas, 
 
 ## Skills Practiced
 
-* ?
+* CoreData
+* Decoding JSON
+* UserDefaults
 
 ## Future Features / Fixes
 
-* Layout initial UI with mock data
-* Show list of tea objects decoded from JSON
+* Pre-Fill Data with teas from JSON file if not previously loaded
 * Show list of user created tea objects
 * Edit a tea object
 * Registration / sign-in / sign-out flow
