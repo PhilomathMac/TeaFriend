@@ -20,6 +20,8 @@ A SwiftUI app to store all the types of tea you own, sort and search your teas, 
 * Pre-Fill Data with teas from JSON file if not previously loaded
 * Show list of user created tea objects
 * Edit a tea object
+* Search teas
+* Filter teas
 * Registration / sign-in / sign-out flow
 * Settings view
 * Store user created tea objects in CoreData and hosted in CloudKit
