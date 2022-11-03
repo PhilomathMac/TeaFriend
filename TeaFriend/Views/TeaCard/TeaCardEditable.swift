@@ -144,11 +144,21 @@ struct TeaCardEditable: View {
                 Button {
                     // validate user input
                     if validateUserInput() {
-                        // save tea
+                        // save changes
                         if tea != nil {
                             // Edit Tea
-                            print("TODO: Edit Tea")
-//                            model.editTea(teaToEdit: tea!, name: teaName, description: teaDescription, brand: "", type: teaType, format: teaFormat, notes: teaNotes, rating: teaRating)
+                            tea!.name = teaName
+                            tea!.type = teaType.rawValue
+                            tea!.format = teaFormat.rawValue
+                            tea!.rating = Int16(teaRating)
+                            tea!.teaDescription = teaDescription
+                            tea!.notes = teaNotes
+                            
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                print("Error saving edited tea to core data: \(error)")
+                            }
                         } else {
                             // Add Tea
                             let newTea = Tea(context: viewContext)
@@ -183,6 +193,7 @@ struct TeaCardEditable: View {
                         .cornerRadius(10)
                 }
                 Spacer()
+                // Cancel button
                 Button {
                     // Return to non-editable version without saving
                     dismiss()
