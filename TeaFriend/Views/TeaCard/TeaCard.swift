@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TeaCard: View {
     
-    let tea: Tea
+    var tea: Tea
+        
     var accentColor: Color {
         switch TeaType(rawValue: tea.type!) ?? .Other {
         case .Black:

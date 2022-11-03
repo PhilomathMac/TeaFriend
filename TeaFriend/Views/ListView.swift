@@ -41,6 +41,7 @@ struct ListView: View {
         }
     }
     
+    // Note: Unneeded Function Now?
     func convertToTeaModel(coreDataTea: Tea) -> TeaModel {
         let newTea = TeaModel(
             name: coreDataTea.name ?? "Error",

@@ -147,12 +147,19 @@ struct TeaCardEditable: View {
                         // save changes
                         if tea != nil {
                             // Edit Tea
-                            tea!.name = teaName
-                            tea!.type = teaType.rawValue
-                            tea!.format = teaFormat.rawValue
-                            tea!.rating = Int16(teaRating)
-                            tea!.teaDescription = teaDescription
-                            tea!.notes = teaNotes
+//                            tea!.name = teaName
+//                            tea!.type = teaType.rawValue
+//                            tea!.format = teaFormat.rawValue
+//                            tea!.rating = Int16(teaRating)
+//                            tea!.teaDescription = teaDescription
+//                            tea!.notes = teaNotes
+                            
+                            tea!.setValue(teaName, forKey: "name")
+                            tea!.setValue(teaType.rawValue, forKey: "type")
+                            tea!.setValue(teaFormat.rawValue, forKey: "format")
+                            tea!.setValue(Int16(teaRating), forKey: "rating")
+                            tea!.setValue(teaDescription, forKey: "teaDescription")
+                            tea!.setValue(teaNotes, forKey: "notes")
                             
                             do {
                                 try viewContext.save()
