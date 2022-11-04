@@ -11,7 +11,7 @@ struct ListView: View {
 //    @EnvironmentObject var model: ViewModel
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: []) var allTeas: FetchedResults<Tea>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var allTeas: FetchedResults<Tea>
     
     @State private var isShowingAddTea = false
     
@@ -78,7 +78,7 @@ struct ListView: View {
                     do {
                         try viewContext.save()
                     } catch {
-                        print("error saving \(newTea.name) to Core Data")
+                        print("error saving \(String(describing: newTea.name)) to Core Data")
                     }
                     
                 }
