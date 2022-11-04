@@ -15,64 +15,64 @@ class ViewModel: ObservableObject {
     }
     
     func parseJSON() {
-    
-    guard let path = Bundle.main.path(forResource: "teas", ofType: ".json") else {
-        print("Error getting json path")
-        return
-    }
-    
-    let url = URL(filePath: path)
-    
-    do {
         
-        let data = try Data(contentsOf: url)
+        guard let path = Bundle.main.path(forResource: "teas", ofType: ".json") else {
+            print("Error getting json path")
+            return
+        }
         
-        let decoder = JSONDecoder()
+        let url = URL(filePath: path)
         
         do {
             
-            let decodedTeas = try decoder.decode([DecodedTea].self, from: data)
-            var newTeas = [TeaModel]()
-            for tea in decodedTeas {
-                let teaType: TeaType
+            let data = try Data(contentsOf: url)
+            
+            let decoder = JSONDecoder()
+            
+            do {
                 
-                switch tea.teaType {
-                case "Black", "black":
-                    teaType = TeaType.Black
-                case "Green", "green":
-                    teaType =  TeaType.Green
-                case "Fruit", "fruit":
-                    teaType =  TeaType.Fruit
-                case "Herbal", "herbal":
-                    teaType =  TeaType.Herbal
-                case "Roobios", "roobios":
-                    teaType =  TeaType.Roobios
-                case "White", "white":
-                    teaType =  TeaType.White
-                default:
-                    teaType =  TeaType.Other
+                let decodedTeas = try decoder.decode([DecodedTea].self, from: data)
+                var newTeas = [TeaModel]()
+                for tea in decodedTeas {
+                    let teaType: TeaType
+                    
+                    switch tea.teaType {
+                    case "Black", "black":
+                        teaType = TeaType.Black
+                    case "Green", "green":
+                        teaType =  TeaType.Green
+                    case "Fruit", "fruit":
+                        teaType =  TeaType.Fruit
+                    case "Herbal", "herbal":
+                        teaType =  TeaType.Herbal
+                    case "Roobios", "roobios":
+                        teaType =  TeaType.Roobios
+                    case "White", "white":
+                        teaType =  TeaType.White
+                    default:
+                        teaType =  TeaType.Other
+                    }
+                    
+                    let newTea = TeaModel(
+                        name: tea.name,
+                        description: tea.description,
+                        brand: tea.brand,
+                        type: teaType,
+                        format: tea.isLooseLeaf ? .looseLeaf : .teaBag,
+                        notes: "",
+                        rating: tea.stars
+                    )
+                    newTeas.append(newTea)
                 }
-                
-                let newTea = TeaModel(
-                name: tea.name,
-                description: tea.description,
-                brand: tea.brand,
-                type: teaType,
-                format: tea.isLooseLeaf ? .looseLeaf : .teaBag,
-                notes: "",
-                rating: tea.stars
-                )
-                newTeas.append(newTea)
+                allTeas = newTeas
+            } catch {
+                print("Error decoding JSON: \(error)")
             }
-            allTeas = newTeas
+            
         } catch {
-            print("Error decoding JSON: \(error)")
+            print("Error creating data: \(error)")
         }
-        
-    } catch {
-        print("Error creating data: \(error)")
     }
-}
     
     func addTea(name: String, description: String, brand: String, type: TeaType, format: TeaFormat, notes: String, rating: Int) {
         let newTea = TeaModel(name: name, description: description, brand: brand, type: type, format: format, notes: notes, rating: rating)
