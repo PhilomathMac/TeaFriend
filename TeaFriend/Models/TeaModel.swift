@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Tea: Identifiable, Equatable {
+struct TeaModel: Identifiable, Equatable {
     var id = UUID()
     var name: String
     var description: String

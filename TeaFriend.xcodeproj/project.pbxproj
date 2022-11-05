@@ -13,11 +13,11 @@
 		BA5C0CDE2901D77900D39EBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5C0CDD2901D77900D39EBE /* Preview Assets.xcassets */; };
 		BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CDF2901D77900D39EBE /* Persistence.swift */; };
 		BA5C0CE32901D77900D39EBE /* TeaFriend.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA5C0CE12901D77900D39EBE /* TeaFriend.xcdatamodeld */; };
-		BA6A223629076B2800AFB230 /* Tea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223529076B2800AFB230 /* Tea.swift */; };
+		BA6A223629076B2800AFB230 /* TeaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223529076B2800AFB230 /* TeaModel.swift */; };
 		BA6A223829076BA500AFB230 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223729076BA500AFB230 /* ListView.swift */; };
 		BA6A223A29076FCB00AFB230 /* TeaCardEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A223929076FCB00AFB230 /* TeaCardEditable.swift */; };
 		BA6A223C2907745D00AFB230 /* teas.json in Resources */ = {isa = PBXBuildFile; fileRef = BA6A223B2907745C00AFB230 /* teas.json */; };
-		BA99B84729085A6300F3255C /* TeaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99B84629085A6300F3255C /* TeaModel.swift */; };
+		BA99B84729085A6300F3255C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99B84629085A6300F3255C /* ViewModel.swift */; };
 		BA99B84929085B8800F3255C /* DecodedTea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99B84829085B8800F3255C /* DecodedTea.swift */; };
 		BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15692901DC8600C09370 /* TeaCard.swift */; };
 		BADF156C2901DF6200C09370 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF156B2901DF6200C09370 /* RatingView.swift */; };
@@ -35,11 +35,11 @@
 		BA5C0CDF2901D77900D39EBE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BA5C0CE22901D77900D39EBE /* TeaFriend.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeaFriend.xcdatamodel; sourceTree = "<group>"; };
 		BA5C0CE42901D77900D39EBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA6A223529076B2800AFB230 /* Tea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tea.swift; sourceTree = "<group>"; };
+		BA6A223529076B2800AFB230 /* TeaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaModel.swift; sourceTree = "<group>"; };
 		BA6A223729076BA500AFB230 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		BA6A223929076FCB00AFB230 /* TeaCardEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaCardEditable.swift; sourceTree = "<group>"; };
 		BA6A223B2907745C00AFB230 /* teas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teas.json; sourceTree = "<group>"; };
-		BA99B84629085A6300F3255C /* TeaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaModel.swift; sourceTree = "<group>"; };
+		BA99B84629085A6300F3255C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BA99B84829085B8800F3255C /* DecodedTea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodedTea.swift; sourceTree = "<group>"; };
 		BADF15692901DC8600C09370 /* TeaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaCard.swift; sourceTree = "<group>"; };
 		BADF156B2901DF6200C09370 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			children = (
 				BADF15702901E3A800C09370 /* TeaFormat.swift */,
 				BADF1572290209C200C09370 /* TeaType.swift */,
-				BA6A223529076B2800AFB230 /* Tea.swift */,
+				BA6A223529076B2800AFB230 /* TeaModel.swift */,
 				BA99B84829085B8800F3255C /* DecodedTea.swift */,
 			);
 			path = Models;
@@ -123,7 +123,7 @@
 		BA5C0CEC2901DBB300D39EBE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				BA99B84629085A6300F3255C /* TeaModel.swift */,
+				BA99B84629085A6300F3255C /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -234,9 +234,9 @@
 				BADF156C2901DF6200C09370 /* RatingView.swift in Sources */,
 				BADF1573290209C200C09370 /* TeaType.swift in Sources */,
 				BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */,
-				BA6A223629076B2800AFB230 /* Tea.swift in Sources */,
+				BA6A223629076B2800AFB230 /* TeaModel.swift in Sources */,
 				BA99B84929085B8800F3255C /* DecodedTea.swift in Sources */,
-				BA99B84729085A6300F3255C /* TeaModel.swift in Sources */,
+				BA99B84729085A6300F3255C /* ViewModel.swift in Sources */,
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,
 				BA6A223A29076FCB00AFB230 /* TeaCardEditable.swift in Sources */,
 				BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */,

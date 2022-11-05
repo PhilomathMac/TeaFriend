@@ -9,8 +9,30 @@ import SwiftUI
 
 struct TeaCard: View {
     
-    let tea: Tea
+    var tea: Tea
+        
+    var accentColor: Color {
+        switch TeaType(rawValue: tea.type ?? "") ?? .Other {
+        case .Black:
+            return Color.black
+        case .Green:
+            return Color.green
+        case .Fruit:
+            return Color.yellow
+        case .Herbal:
+            return Color.yellow
+        case .Roobios:
+            return Color.brown
+        case .White:
+            return Color.gray
+        case .Other:
+            return Color.red
+        }
+    }
     @State private var isShowingEditTea = false
+    @State private var deleteConfirmationDisplayed = false
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -26,11 +48,11 @@ struct TeaCard: View {
                             .frame(width: 100, height: 90)
                             .aspectRatio(contentMode: .fit)
                             .padding()
-                            .foregroundColor(tea.accentColor)
-                        Text(tea.name)
+                            .foregroundColor(accentColor)
+                        Text(tea.name ?? "Error")
                             .font(.title)
                             .padding(.vertical, 10)
-                        Text(tea.description)
+                        Text(tea.teaDescription ?? "")
                             .italic()
                             .padding(.bottom, 10)
                     }
@@ -47,7 +69,7 @@ struct TeaCard: View {
                     Text("Rating:")
                         .bold()
                     Spacer()
-                    RatingView(teaRating: tea.rating)
+                    RatingView(teaRating: Int(tea.rating))
                 }
                 .padding(.vertical)
                 
@@ -56,7 +78,7 @@ struct TeaCard: View {
                     Text("Tea Type:")
                         .bold()
                     Spacer()
-                    Text(tea.type.rawValue)
+                    Text(tea.type ?? "Error")
                 }
                 .padding(.vertical)
                 
@@ -65,15 +87,15 @@ struct TeaCard: View {
                     Text("Tea Format:")
                         .bold()
                     Spacer()
-                    if tea.format == .looseLeaf {
+                    if tea.format == "looseLeaf" {
                         Image(systemName: "leaf.fill")
                             .resizable()
-                            .foregroundColor(tea.accentColor)
+                            .foregroundColor(accentColor)
                             .frame(width: 30, height: 30)
                     } else {
                         Image(systemName: "bag.fill")
                             .resizable()
-                            .foregroundColor(tea.accentColor)
+                            .foregroundColor(accentColor)
                             .frame(width: 30, height: 30)
                     }
                 }
@@ -82,39 +104,60 @@ struct TeaCard: View {
                 Divider()
                     .padding(.vertical, 10)
                 
-                if !tea.notes.isEmpty {
+                if !(tea.notes ?? "").isEmpty {
                     VStack(alignment: .leading) {
                         Text("Notes:")
                             .bold()
                             .padding(.vertical, 2)
-                        Text(tea.notes)
+                        Text(tea.notes!)
                     }
                 }
             }
             .padding()
             
             Button {
-                isShowingEditTea = true
+                deleteConfirmationDisplayed = true
             } label: {
-                Text("Edit")
+                Text("Delete Tea")
                     .padding()
-                    .bold()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .foregroundColor(.red)
             }
             
         }
         .sheet(isPresented: $isShowingEditTea) {
             TeaCardEditable(tea)
         }
+        .toolbar(content: {
+            Button {
+                isShowingEditTea = true
+            } label: {
+                Text("Edit")
+                    .padding()
+            }
+        })
+        .alert(isPresented: $deleteConfirmationDisplayed) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("You won't be able to undo this action."),
+                primaryButton: .destructive(Text("Delete")) {
+                    viewContext.delete(tea)
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        print("Error deleting tea: \(error)")
+                    }
+                },
+                secondaryButton: .default(Text("Cancel"))
+            )
+        }
         
         
     }
 }
 
-struct TeaCard_Previews: PreviewProvider {
-    static var previews: some View {
-        TeaCard(tea: Tea(name: "Orange Spice", description: "Sweet and spicy with cinnamon, orange peel, and cloves", brand: "David's", type: .Green, format: .looseLeaf, notes: "Like this one a lot", rating: 4))
-    }
-}
+//struct TeaCard_Previews: PreviewProvider {
+//    @Environment(\.managedObjectContext) private var viewContext
+//    static var previews: some View {
+//        TeaCard(tea: Tea(context: viewContext))
+//    }
+//}

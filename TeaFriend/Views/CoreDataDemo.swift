@@ -12,18 +12,18 @@ struct CoreDataDemo: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Tea.name, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var teas: FetchedResults<Tea>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
+                ForEach(teas) { tea in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Text("Item at \(tea.name!)")
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        Text(tea.name!)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -44,8 +44,14 @@ struct CoreDataDemo: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newTea = Tea(context: viewContext)
+            newTea.name = "New Tea"
+            newTea.rating = 5
+            newTea.teaDescription = "New tea description"
+            newTea.notes = ""
+            newTea.type = "Black"
+            newTea.format = "looseLeaf"
+            newTea.id = UUID()
 
             do {
                 try viewContext.save()
@@ -60,7 +66,7 @@ struct CoreDataDemo: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { teas[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
