@@ -13,15 +13,16 @@ struct TeaCardEditable: View {
     @EnvironmentObject var model: ViewModel
     @Environment(\.dismiss) private var dismiss
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     
     @State private var teaFormat: TeaFormat
     @State private var teaType: TeaType
     @State private var teaNotes: String
     @State private var teaDescription: String
     @State private var teaName: String
-    @State private var errorDisplayed = false
     @State private var teaRating: Int
+    
+    @State private var errorDisplayed = false
     
     var accentColor: Color {
         switch TeaType(rawValue: (tea?.type) ?? "Other") ?? .Other {
@@ -64,6 +65,76 @@ struct TeaCardEditable: View {
     
     var body: some View {
         VStack {
+            // Buttons
+            HStack {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Cancel")
+                        .padding()
+                }
+                
+                Spacer()
+                
+                // Done Button
+                Button {
+                    // validate user input
+                    if validateUserInput() {
+                        // save changes
+                        if tea != nil {
+                            // Edit Tea
+                            // tea!.name = teaName
+                            // tea!.type = teaType.rawValue
+                            // tea!.format = teaFormat.rawValue
+                            // tea!.rating = Int16(teaRating)
+                            // tea!.teaDescription = teaDescription
+                            // tea!.notes = teaNotes
+                            
+                            tea!.setValue(teaName, forKey: "name")
+                            tea!.setValue(teaType.rawValue, forKey: "type")
+                            tea!.setValue(teaFormat.rawValue, forKey: "format")
+                            tea!.setValue(Int16(teaRating), forKey: "rating")
+                            tea!.setValue(teaDescription, forKey: "teaDescription")
+                            tea!.setValue(teaNotes, forKey: "notes")
+                            
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                print("Error saving edited tea to core data: \(error)")
+                            }
+                        } else {
+                            // Add Tea
+                            let newTea = Tea(context: viewContext)
+                            newTea.name = teaName
+                            newTea.id = UUID()
+                            newTea.type = teaType.rawValue
+                            newTea.format = teaFormat.rawValue
+                            newTea.rating = Int16(teaRating)
+                            newTea.teaDescription = teaDescription
+                            newTea.notes = teaNotes
+                            newTea.brand = "NO BRAND"
+                            
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                print("Error saving to core data: \(error)")
+                            }
+                        }
+                        // dismiss view
+                        dismiss()
+                    } else {
+                        errorDisplayed = true
+                    }
+                    
+                } label: {
+                    Text("Done")
+                        .padding()
+                        .bold()
+                }
+                
+            }
+            .padding(5)
+            
             // Tea Details
             VStack {
                 
@@ -137,87 +208,13 @@ struct TeaCardEditable: View {
             }
             .padding([.horizontal, .bottom])
             
-            
-            // Button
-            HStack {
-                Spacer()
-                Button {
-                    // validate user input
-                    if validateUserInput() {
-                        // save changes
-                        if tea != nil {
-                            // Edit Tea
-//                            tea!.name = teaName
-//                            tea!.type = teaType.rawValue
-//                            tea!.format = teaFormat.rawValue
-//                            tea!.rating = Int16(teaRating)
-//                            tea!.teaDescription = teaDescription
-//                            tea!.notes = teaNotes
-                            
-                            tea!.setValue(teaName, forKey: "name")
-                            tea!.setValue(teaType.rawValue, forKey: "type")
-                            tea!.setValue(teaFormat.rawValue, forKey: "format")
-                            tea!.setValue(Int16(teaRating), forKey: "rating")
-                            tea!.setValue(teaDescription, forKey: "teaDescription")
-                            tea!.setValue(teaNotes, forKey: "notes")
-                            
-                            do {
-                                try viewContext.save()
-                            } catch {
-                                print("Error saving edited tea to core data: \(error)")
-                            }
-                        } else {
-                            // Add Tea
-                            let newTea = Tea(context: viewContext)
-                            newTea.name = teaName
-                            newTea.id = UUID()
-                            newTea.type = teaType.rawValue
-                            newTea.format = teaFormat.rawValue
-                            newTea.rating = Int16(teaRating)
-                            newTea.teaDescription = teaDescription
-                            newTea.notes = teaNotes
-                            newTea.brand = "NO BRAND"
-                            
-                            do {
-                                try viewContext.save()
-                            } catch {
-                                print("Error saving to core data: \(error)")
-                            }
-                        }
-                        // dismiss view
-                        dismiss()
-                    } else {
-                       errorDisplayed = true
-                    }
-                    
-                } label: {
-                    Text("Save")
-                        .padding()
-                        .padding(.horizontal, 20)
-                        .bold()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                Spacer()
-                // Cancel button
-                Button {
-                    // Return to non-editable version without saving
-                    dismiss()
-                } label: {
-                    Text("Cancel")
-                        .foregroundColor(.red)
-                }
-                Spacer()
-            }
-            
         }
         .alert("Oops!", isPresented: $errorDisplayed) {
             // default ok action
         } message: {
             Text("Every tea has to at least have a name!")
         }
-
+        
     }
     
     private func validateUserInput() -> Bool {

@@ -12,7 +12,7 @@ struct TeaCard: View {
     var tea: Tea
         
     var accentColor: Color {
-        switch TeaType(rawValue: tea.type!) ?? .Other {
+        switch TeaType(rawValue: tea.type ?? "") ?? .Other {
         case .Black:
             return Color.black
         case .Green:
@@ -30,6 +30,9 @@ struct TeaCard: View {
         }
     }
     @State private var isShowingEditTea = false
+    @State private var deleteConfirmationDisplayed = false
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -113,19 +116,39 @@ struct TeaCard: View {
             .padding()
             
             Button {
-                isShowingEditTea = true
+                deleteConfirmationDisplayed = true
             } label: {
-                Text("Edit")
+                Text("Delete Tea")
                     .padding()
-                    .bold()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .foregroundColor(.red)
             }
             
         }
         .sheet(isPresented: $isShowingEditTea) {
             TeaCardEditable(tea)
+        }
+        .toolbar(content: {
+            Button {
+                isShowingEditTea = true
+            } label: {
+                Text("Edit")
+                    .padding()
+            }
+        })
+        .alert(isPresented: $deleteConfirmationDisplayed) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("You won't be able to undo this action."),
+                primaryButton: .destructive(Text("Delete")) {
+                    viewContext.delete(tea)
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        print("Error deleting tea: \(error)")
+                    }
+                },
+                secondaryButton: .default(Text("Cancel"))
+            )
         }
         
         
