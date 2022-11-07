@@ -154,10 +154,14 @@ struct TeaCard: View {
         
     }
 }
-
+// TODO: Get Previews Working With Core Data
 //struct TeaCard_Previews: PreviewProvider {
-//    @Environment(\.managedObjectContext) private var viewContext
+//    let tea = Tea()
+//    tea.name = "Testing Tea"
+//    tea.rating = 3
+//    tea.description = "Testing"
+//
 //    static var previews: some View {
-//        TeaCard(tea: Tea(context: viewContext))
+//        TeaCard(tea: tea)
 //    }
 //}

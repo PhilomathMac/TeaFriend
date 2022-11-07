@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ListView: View {
-//    @EnvironmentObject var model: ViewModel
-    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var allTeas: FetchedResults<Tea>
     
@@ -90,25 +88,10 @@ struct ListView: View {
             print("Error creating data: \(error)")
         }
     }
-    
-    // Note: Unneeded Function Now?
-    func convertToTeaModel(coreDataTea: Tea) -> TeaModel {
-        let newTea = TeaModel(
-            name: coreDataTea.name ?? "Error",
-            description: coreDataTea.description ,
-            brand: coreDataTea.brand ?? "Error",
-            type: TeaType(rawValue: coreDataTea.type!) ?? .Other,
-            format: TeaFormat(rawValue: coreDataTea.format!) ?? .teaBag,
-            notes: coreDataTea.notes ?? "Error",
-            rating: Int(coreDataTea.rating )
-        )
-        return newTea
-    }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView()
-            .environmentObject(ViewModel())
     }
 }
