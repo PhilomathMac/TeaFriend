@@ -223,7 +223,6 @@ struct TeaCardEditable: View {
         }
         return true
     }
-    
 }
 
 
