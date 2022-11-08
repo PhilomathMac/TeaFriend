@@ -173,7 +173,8 @@ struct TeaCardEditable: View {
                         Text("Black").tag(TeaType.Black)
                         Text("Green").tag(TeaType.Green)
                         Text("Roobios").tag(TeaType.Roobios)
-                        Text("Fruit/Herbal").tag(TeaType.Herbal)
+                        Text("Herbal").tag(TeaType.Herbal)
+                        Text("Fruit").tag(TeaType.Fruit)
                         Text("Roobios").tag(TeaType.Roobios)
                         Text("Other").tag(TeaType.Other)
                     }
