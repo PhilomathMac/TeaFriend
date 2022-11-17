@@ -25,6 +25,7 @@
 		BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAD7482909C87C0003244E /* RatingButtons.swift */; };
 		BB839B4C2925C86D00762ADF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4B2925C86C00762ADF /* SearchBar.swift */; };
 		BB839B4E2925CCDE00762ADF /* ResignKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4D2925CCDE00762ADF /* ResignKeyboardHelper.swift */; };
+		BB839B502926D02800762ADF /* FilteredTeaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4F2926D02800762ADF /* FilteredTeaList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		BAFAD7482909C87C0003244E /* RatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingButtons.swift; sourceTree = "<group>"; };
 		BB839B4B2925C86C00762ADF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BB839B4D2925CCDE00762ADF /* ResignKeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResignKeyboardHelper.swift; path = TeaFriend/Views/ResignKeyboardHelper.swift; sourceTree = SOURCE_ROOT; };
+		BB839B4F2926D02800762ADF /* FilteredTeaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredTeaList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6A223729076BA500AFB230 /* ListView.swift */,
+				BB839B4F2926D02800762ADF /* FilteredTeaList.swift */,
 				BADF156D2901E02100C09370 /* TeaCard */,
 				BB839B4B2925C86C00762ADF /* SearchBar.swift */,
 			);
@@ -244,6 +247,7 @@
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,
 				BA6A223A29076FCB00AFB230 /* TeaCardEditable.swift in Sources */,
 				BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */,
+				BB839B502926D02800762ADF /* FilteredTeaList.swift in Sources */,
 				BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,24 +9,17 @@ import SwiftUI
 
 struct ListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var allTeas: FetchedResults<Tea>
     
     @State private var isShowingAddTea = false
     @State var searchText = ""
     
     var body: some View {
         NavigationView {
-            //MARK: Move SearchBar into toolbar?
-            SearchBar(searchText: $searchText)
             VStack {
-                List(allTeas) { tea in
-                    NavigationLink {
-                        TeaCard(tea: tea)
-                    } label: {
-                        Text(tea.name ?? "Error")
-                    }
-                }
-                .resignKeyboardOnDragGesture()
+                //MARK: Move SearchBar into toolbar?
+                SearchBar(searchText: $searchText)
+                
+                FilteredTeaList(filter: searchText)
             }
             .navigationTitle("My Teas")
             .toolbar {
