@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchBar: View {
     
-    @State private var searchText = ""
+    @Binding var searchText: String
     @State private var showCancelButton = false
     
     var body: some View {
@@ -24,6 +24,7 @@ struct SearchBar: View {
                     showCancelButton = true
                 } onCommit: {
                     // MARK: Search Teas
+                    print(searchText)
                 }
 
                 // Clear Button
@@ -61,6 +62,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
+        SearchBar(searchText: .constant(""))
     }
 }

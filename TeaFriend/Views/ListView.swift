@@ -12,11 +12,13 @@ struct ListView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var allTeas: FetchedResults<Tea>
     
     @State private var isShowingAddTea = false
+    @State var searchText = ""
     
     var body: some View {
         NavigationView {
+            //MARK: Move SearchBar into toolbar?
+            SearchBar(searchText: $searchText)
             VStack {
-                SearchBar()
                 List(allTeas) { tea in
                     NavigationLink {
                         TeaCard(tea: tea)
