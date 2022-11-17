@@ -53,7 +53,9 @@ struct SearchBar: View {
             }
         }
         .padding(.horizontal)
-        .toolbar(showCancelButton ? .visible : .hidden)
+        .navigationBarHidden(showCancelButton)
+        // My attempt at using the newer syntax .toolbar -> currently doesn't work
+//        .toolbar(showCancelButton ? .visible : .hidden)
     }
 }
 
