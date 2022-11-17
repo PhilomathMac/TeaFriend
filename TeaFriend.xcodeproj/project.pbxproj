@@ -23,6 +23,7 @@
 		BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF15702901E3A800C09370 /* TeaFormat.swift */; };
 		BADF1573290209C200C09370 /* TeaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF1572290209C200C09370 /* TeaType.swift */; };
 		BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAD7482909C87C0003244E /* RatingButtons.swift */; };
+		BB839B4C2925C86D00762ADF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4B2925C86C00762ADF /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BADF15702901E3A800C09370 /* TeaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaFormat.swift; sourceTree = "<group>"; };
 		BADF1572290209C200C09370 /* TeaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaType.swift; sourceTree = "<group>"; };
 		BAFAD7482909C87C0003244E /* RatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingButtons.swift; sourceTree = "<group>"; };
+		BB839B4B2925C86C00762ADF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				BA6A223729076BA500AFB230 /* ListView.swift */,
 				BADF156D2901E02100C09370 /* TeaCard */,
+				BB839B4B2925C86C00762ADF /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				BADF1573290209C200C09370 /* TeaType.swift in Sources */,
 				BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */,
 				BA6A223629076B2800AFB230 /* TeaModel.swift in Sources */,
+				BB839B4C2925C86D00762ADF /* SearchBar.swift in Sources */,
 				BA99B84929085B8800F3255C /* DecodedTea.swift in Sources */,
 				BA99B84729085A6300F3255C /* ViewModel.swift in Sources */,
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,

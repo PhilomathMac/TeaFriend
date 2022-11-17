@@ -16,6 +16,7 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                SearchBar()
                 List(allTeas) { tea in
                     NavigationLink {
                         TeaCard(tea: tea)
