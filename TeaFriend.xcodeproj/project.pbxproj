@@ -26,6 +26,10 @@
 		BB839B4C2925C86D00762ADF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4B2925C86C00762ADF /* SearchBar.swift */; };
 		BB839B4E2925CCDE00762ADF /* ResignKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4D2925CCDE00762ADF /* ResignKeyboardHelper.swift */; };
 		BB839B502926D02800762ADF /* FilteredTeaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B4F2926D02800762ADF /* FilteredTeaList.swift */; };
+		BB839B532926DCA100762ADF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B522926DCA100762ADF /* FilterView.swift */; };
+		BB839B562926DDEF00762ADF /* FilterByRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B552926DDEF00762ADF /* FilterByRatingView.swift */; };
+		BB839B582926DDFB00762ADF /* FilterByTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B572926DDFB00762ADF /* FilterByTypeView.swift */; };
+		BB839B5A2926DE2700762ADF /* FilterByFormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B592926DE2700762ADF /* FilterByFormatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		BB839B4B2925C86C00762ADF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BB839B4D2925CCDE00762ADF /* ResignKeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResignKeyboardHelper.swift; path = TeaFriend/Views/ResignKeyboardHelper.swift; sourceTree = SOURCE_ROOT; };
 		BB839B4F2926D02800762ADF /* FilteredTeaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredTeaList.swift; sourceTree = "<group>"; };
+		BB839B522926DCA100762ADF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		BB839B552926DDEF00762ADF /* FilterByRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterByRatingView.swift; sourceTree = "<group>"; };
+		BB839B572926DDFB00762ADF /* FilterByTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterByTypeView.swift; sourceTree = "<group>"; };
+		BB839B592926DE2700762ADF /* FilterByFormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterByFormatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +114,8 @@
 		BA5C0CEA2901DBA100D39EBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BA6A223729076BA500AFB230 /* ListView.swift */,
-				BB839B4F2926D02800762ADF /* FilteredTeaList.swift */,
+				BB839B512926DC6300762ADF /* ListView */,
 				BADF156D2901E02100C09370 /* TeaCard */,
-				BB839B4B2925C86C00762ADF /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +166,28 @@
 				BA6A223929076FCB00AFB230 /* TeaCardEditable.swift */,
 			);
 			path = TeaCard;
+			sourceTree = "<group>";
+		};
+		BB839B512926DC6300762ADF /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				BB839B542926DDD700762ADF /* Filters */,
+				BA6A223729076BA500AFB230 /* ListView.swift */,
+				BB839B4F2926D02800762ADF /* FilteredTeaList.swift */,
+				BB839B4B2925C86C00762ADF /* SearchBar.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		BB839B542926DDD700762ADF /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				BB839B522926DCA100762ADF /* FilterView.swift */,
+				BB839B552926DDEF00762ADF /* FilterByRatingView.swift */,
+				BB839B572926DDFB00762ADF /* FilterByTypeView.swift */,
+				BB839B592926DE2700762ADF /* FilterByFormatView.swift */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,19 +261,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB839B562926DDEF00762ADF /* FilterByRatingView.swift in Sources */,
 				BA5C0CE32901D77900D39EBE /* TeaFriend.xcdatamodeld in Sources */,
 				BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */,
 				BA6A223829076BA500AFB230 /* ListView.swift in Sources */,
 				BADF156C2901DF6200C09370 /* RatingView.swift in Sources */,
 				BADF1573290209C200C09370 /* TeaType.swift in Sources */,
 				BADF15712901E3A800C09370 /* TeaFormat.swift in Sources */,
+				BB839B582926DDFB00762ADF /* FilterByTypeView.swift in Sources */,
 				BA6A223629076B2800AFB230 /* TeaModel.swift in Sources */,
 				BB839B4E2925CCDE00762ADF /* ResignKeyboardHelper.swift in Sources */,
 				BB839B4C2925C86D00762ADF /* SearchBar.swift in Sources */,
 				BA99B84929085B8800F3255C /* DecodedTea.swift in Sources */,
+				BB839B532926DCA100762ADF /* FilterView.swift in Sources */,
 				BA99B84729085A6300F3255C /* ViewModel.swift in Sources */,
 				BA5C0CD72901D77700D39EBE /* TeaFriendApp.swift in Sources */,
 				BA6A223A29076FCB00AFB230 /* TeaCardEditable.swift in Sources */,
+				BB839B5A2926DE2700762ADF /* FilterByFormatView.swift in Sources */,
 				BAFAD7492909C87C0003244E /* RatingButtons.swift in Sources */,
 				BB839B502926D02800762ADF /* FilteredTeaList.swift in Sources */,
 				BADF156A2901DC8600C09370 /* TeaCard.swift in Sources */,
