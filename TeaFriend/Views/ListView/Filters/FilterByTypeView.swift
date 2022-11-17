@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct FilterByTypeView: View {
+    
+    @State var chosenTeaType: TeaType?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("Tea Type:")
+                .bold()
+                .padding(.vertical)
+            Spacer()
+            Picker("", selection: $chosenTeaType) {
+                Text("Any").tag(nil as TeaType?)
+                Text("Black").tag(TeaType.Black as TeaType?)
+                Text("Green").tag(TeaType.Green as TeaType?)
+                Text("Roobios").tag(TeaType.Roobios as TeaType?)
+                Text("Herbal").tag(TeaType.Herbal as TeaType?)
+                Text("Fruit").tag(TeaType.Fruit as TeaType?)
+                Text("Roobios").tag(TeaType.Roobios as TeaType?)
+                Text("Other").tag(TeaType.Other as TeaType?)
+            }
+        }
+        .padding()
     }
 }
 
 struct FilterByTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterByTypeView()
+        FilterByTypeView(chosenTeaType: .Black)
     }
 }
