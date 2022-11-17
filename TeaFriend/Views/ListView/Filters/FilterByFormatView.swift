@@ -8,8 +8,40 @@
 import SwiftUI
 
 struct FilterByFormatView: View {
+    @State var chosenFormat: TeaFormat?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("Tea Format:")
+                .bold()
+                .padding(.vertical)
+            Spacer()
+            HStack(spacing: 30) {
+                // TeaBag Button
+                Button {
+                    chosenFormat = (chosenFormat == .teaBag) ? nil : .teaBag
+                } label: {
+                    Image(systemName: "bag.fill")
+                        .foregroundColor(chosenFormat == .teaBag ? Color(.systemGreen) : Color(.systemGray))
+                        .padding(10)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(10)
+                }
+                
+                // LooseLeaf Button
+                Button {
+                    chosenFormat = (chosenFormat == .looseLeaf) ? nil : .looseLeaf
+                } label: {
+                    Image(systemName: "leaf.fill")
+                        .foregroundColor(chosenFormat == .looseLeaf ? Color(.systemGreen) : Color(.systemGray))
+                        .padding(10)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(10)
+                }
+
+            }
+        }
+        .padding()
     }
 }
 
