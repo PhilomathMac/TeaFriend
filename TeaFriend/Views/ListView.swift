@@ -23,8 +23,8 @@ struct ListView: View {
                     } label: {
                         Text(tea.name ?? "Error")
                     }
-
                 }
+                .resignKeyboardOnDragGesture()
             }
             .navigationTitle("My Teas")
             .toolbar {

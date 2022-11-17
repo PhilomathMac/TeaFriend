@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     
     @State private var searchText = ""
-    @State private var showCancelButton = true
+    @State private var showCancelButton = false
     
     var body: some View {
         HStack {
@@ -44,6 +44,7 @@ struct SearchBar: View {
             if showCancelButton {
                 
                 Button("Cancel") {
+                    UIApplication.shared.endEditing(true)
                     searchText = ""
                     showCancelButton = false
                 }
