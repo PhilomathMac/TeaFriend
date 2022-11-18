@@ -21,7 +21,7 @@ struct TeaCard: View {
             return Color.mint
         case .Herbal:
             return Color.indigo
-        case .Roobios:
+        case .Rooibos:
             return Color.pink
         case .White:
             return Color.gray

@@ -28,7 +28,7 @@ struct TeaModel: Identifiable, Equatable {
             return Color.mint
         case .Herbal:
             return Color.indigo
-        case .Roobios:
+        case .Rooibos:
             return Color.pink
         case .White:
             return Color.gray

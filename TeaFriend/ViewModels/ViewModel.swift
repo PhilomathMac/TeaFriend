@@ -45,8 +45,8 @@ class ViewModel: ObservableObject {
                         teaType =  TeaType.Fruit
                     case "Herbal", "herbal":
                         teaType =  TeaType.Herbal
-                    case "Roobios", "roobios":
-                        teaType =  TeaType.Roobios
+                    case "Rooibos", "rooibos":
+                        teaType =  TeaType.Rooibos
                     case "White", "white":
                         teaType =  TeaType.White
                     default:

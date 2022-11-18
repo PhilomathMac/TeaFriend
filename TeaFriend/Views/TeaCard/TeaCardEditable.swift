@@ -33,7 +33,7 @@ struct TeaCardEditable: View {
             return Color.mint
         case .Herbal:
             return Color.indigo
-        case .Roobios:
+        case .Rooibos:
             return Color.pink
         case .White:
             return Color.gray
@@ -176,7 +176,7 @@ struct TeaCardEditable: View {
                     Picker("", selection: $teaType) {
                         Text("Black").tag(TeaType.Black)
                         Text("Green").tag(TeaType.Green)
-                        Text("Roobios").tag(TeaType.Roobios)
+                        Text("Rooibos").tag(TeaType.Rooibos)
                         Text("Herbal").tag(TeaType.Herbal)
                         Text("Fruit").tag(TeaType.Fruit)
                         Text("Pu'erh").tag(TeaType.Puerh)

@@ -21,7 +21,7 @@ struct FilterByTypeView: View {
                 Text("Any").tag(nil as TeaType?)
                 Text("Black").tag(TeaType.Black as TeaType?)
                 Text("Green").tag(TeaType.Green as TeaType?)
-                Text("Roobios").tag(TeaType.Roobios as TeaType?)
+                Text("Rooibos").tag(TeaType.Rooibos as TeaType?)
                 Text("Herbal").tag(TeaType.Herbal as TeaType?)
                 Text("Fruit").tag(TeaType.Fruit as TeaType?)
                 Text("Pu'erh").tag(TeaType.Puerh as TeaType?)
