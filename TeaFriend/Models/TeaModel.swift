@@ -1,9 +1,11 @@
 //
-//  Tea.swift
+//  TeaModel.swift
 //  TeaFriend
 //
 //  Created by McKenzie Macdonald on 10/24/22.
 //
+
+// NOTE: TeaModel only used for non-CoreData version of this project.
 
 import Foundation
 import SwiftUI
