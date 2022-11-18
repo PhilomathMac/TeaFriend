@@ -22,9 +22,6 @@ struct SearchBar: View {
                 
                 TextField("Search", text: $searchText) { isEditing in
                     showCancelButton = true
-                } onCommit: {
-                    // MARK: Search Teas
-                    print(searchText)
                 }
 
                 // Clear Button
