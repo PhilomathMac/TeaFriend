@@ -30,7 +30,7 @@ struct ListView: View {
                     }
                 }
                 
-                FilteredTeaList(filter: searchText)
+                FilteredTeaList(searchText: searchText, filteredRating: filteredRating, filteredType: filteredType, filteredFormat: filteredFormat)
             }
             .navigationTitle("My Teas")
             .toolbar {
