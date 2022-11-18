@@ -16,7 +16,37 @@ struct FilteredTeaList: View {
             NavigationLink {
                 TeaCard(tea: tea)
             } label: {
-                Text(tea.name ?? "Error")
+                HStack {
+                    // Tea Format Image
+                    Image(systemName: tea.format == "looseLeaf" ? "leaf.fill" : "bag.fill")
+                        .font(.title3)
+                        .foregroundColor(Color(.systemBlue))
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.trailing)
+                    
+                    VStack(alignment: .leading) {
+                        // Tea Name
+                        Text(tea.name ?? "Error")
+                            .bold()
+                            .font(.title3)
+                        HStack {
+                            // Tea Rating
+                            RatingView(teaRating: Int(tea.rating))
+                                .font(.caption2)
+                                .padding(.trailing, 10)
+                            
+                            // Tea Type
+                            Text(tea.type ?? "Error")
+                                .font(.caption2)
+                                .foregroundColor(Color(.systemBlue))
+                                .padding(5)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(5)
+                        }
+                    }
+                }
             }
         }
         .resignKeyboardOnDragGesture()
