@@ -29,6 +29,7 @@ struct ListView: View {
                             .padding(.trailing)
                     }
                 }
+                .padding(.bottom, 7)
                 
                 FilteredTeaList(searchText: searchText, filteredRating: filteredRating, filteredType: filteredType, filteredFormat: filteredFormat)
             }
