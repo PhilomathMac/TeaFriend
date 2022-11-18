@@ -1,9 +1,11 @@
 //
-//  TeaModel.swift
+//  ViewModel.swift
 //  TeaFriend
 //
 //  Created by McKenzie Macdonald on 10/25/22.
 //
+
+// NOTE: ViewModel only used for the non-CoreData version of this project.
 
 import Foundation
 
