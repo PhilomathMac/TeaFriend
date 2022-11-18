@@ -22,7 +22,7 @@ struct FilterByFormatView: View {
                     chosenFormat = (chosenFormat == .teaBag) ? nil : .teaBag
                 } label: {
                     Image(systemName: "bag.fill")
-                        .foregroundColor(chosenFormat == .teaBag ? Color(.systemGreen) : Color(.systemGray))
+                        .foregroundColor(chosenFormat == .teaBag ? Color(.systemBlue) : Color(.systemGray))
                         .padding(10)
                         .background(Color(.systemGray5))
                         .cornerRadius(10)

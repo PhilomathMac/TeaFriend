@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FilterByRatingView: View {
     @State var chosenRating: Int = 0
-    var onColor = Color(.systemGreen)
+    var onColor = Color(.systemYellow)
     var offColor = Color(.systemGray)
     
     var body: some View {

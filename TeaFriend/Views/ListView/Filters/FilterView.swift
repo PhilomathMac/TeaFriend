@@ -18,7 +18,6 @@ struct FilterView: View {
                     // MARK: Clear Filters
                 } label: {
                     Text("Reset Filters")
-                        .foregroundColor(Color(.systemGreen))
                 }
             }
             Divider()
