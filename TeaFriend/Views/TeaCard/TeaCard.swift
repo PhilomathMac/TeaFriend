@@ -18,13 +18,17 @@ struct TeaCard: View {
         case .Green:
             return Color.green
         case .Fruit:
-            return Color.yellow
+            return Color.mint
         case .Herbal:
-            return Color.yellow
+            return Color.indigo
         case .Roobios:
-            return Color.brown
+            return Color.pink
         case .White:
             return Color.gray
+        case .Oolong:
+            return Color.orange
+        case .Puerh:
+            return Color.brown
         case .Other:
             return Color.red
         }
@@ -70,6 +74,9 @@ struct TeaCard: View {
                         .bold()
                     Spacer()
                     RatingView(teaRating: Int(tea.rating))
+                        .onTapGesture {
+                            isShowingEditTea.toggle()
+                        }
                 }
                 .padding(.vertical)
                 
@@ -79,6 +86,13 @@ struct TeaCard: View {
                         .bold()
                     Spacer()
                     Text(tea.type ?? "Error")
+                        .foregroundColor(accentColor)
+                        .padding(7)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            isShowingEditTea.toggle()
+                        }
                 }
                 .padding(.vertical)
                 
@@ -92,11 +106,17 @@ struct TeaCard: View {
                             .resizable()
                             .foregroundColor(accentColor)
                             .frame(width: 30, height: 30)
+                            .onTapGesture {
+                                isShowingEditTea.toggle()
+                            }
                     } else {
                         Image(systemName: "bag.fill")
                             .resizable()
                             .foregroundColor(accentColor)
                             .frame(width: 30, height: 30)
+                            .onTapGesture {
+                                isShowingEditTea.toggle()
+                            }
                     }
                 }
                 .padding(.vertical)

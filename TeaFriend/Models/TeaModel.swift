@@ -25,13 +25,17 @@ struct TeaModel: Identifiable, Equatable {
         case .Green:
             return Color.green
         case .Fruit:
-            return Color.yellow
+            return Color.mint
         case .Herbal:
-            return Color.yellow
+            return Color.indigo
         case .Roobios:
-            return Color.brown
+            return Color.pink
         case .White:
             return Color.gray
+        case .Oolong:
+            return Color.orange
+        case .Puerh:
+            return Color.brown
         case .Other:
             return Color.red
         }

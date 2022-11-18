@@ -24,7 +24,8 @@ struct FilterByTypeView: View {
                 Text("Roobios").tag(TeaType.Roobios as TeaType?)
                 Text("Herbal").tag(TeaType.Herbal as TeaType?)
                 Text("Fruit").tag(TeaType.Fruit as TeaType?)
-                Text("Roobios").tag(TeaType.Roobios as TeaType?)
+                Text("Pu'erh").tag(TeaType.Puerh as TeaType?)
+                Text("Oolong").tag(TeaType.Oolong as TeaType?)
                 Text("Other").tag(TeaType.Other as TeaType?)
             }
         }

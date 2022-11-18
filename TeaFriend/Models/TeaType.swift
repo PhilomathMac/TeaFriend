@@ -14,5 +14,7 @@ enum TeaType: String {
     case Herbal = "Herbal"
     case Roobios = "Roobios"
     case White = "White"
+    case Puerh = "Pu'erh"
+    case Oolong = "Oolong"
     case Other = "Other"
 }
