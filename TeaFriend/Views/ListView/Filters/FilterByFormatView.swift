@@ -41,7 +41,6 @@ struct FilterByFormatView: View {
 
             }
         }
-        .padding()
     }
 }
 

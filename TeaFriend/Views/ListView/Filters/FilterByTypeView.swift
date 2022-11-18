@@ -28,7 +28,6 @@ struct FilterByTypeView: View {
                 Text("Other").tag(TeaType.Other as TeaType?)
             }
         }
-        .padding()
     }
 }
 
