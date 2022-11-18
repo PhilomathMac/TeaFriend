@@ -18,7 +18,6 @@ struct PersistenceController {
             newTea.name = "New Tea"
             newTea.rating = 5
             newTea.teaDescription = "New tea description"
-            newTea.notes = ""
             newTea.type = "Black"
             newTea.format = "looseLeaf"
             newTea.id = UUID()

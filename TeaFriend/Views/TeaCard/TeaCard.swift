@@ -103,15 +103,7 @@ struct TeaCard: View {
                 
                 Divider()
                     .padding(.vertical, 10)
-                
-                if !(tea.notes ?? "").isEmpty {
-                    VStack(alignment: .leading) {
-                        Text("Notes:")
-                            .bold()
-                            .padding(.vertical, 2)
-                        Text(tea.notes!)
-                    }
-                }
+            
             }
             .padding()
             
