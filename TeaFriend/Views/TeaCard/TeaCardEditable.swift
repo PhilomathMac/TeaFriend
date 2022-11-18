@@ -20,31 +20,8 @@ struct TeaCardEditable: View {
     @State private var teaDescription: String
     @State private var teaName: String
     @State private var teaRating: Int
-    
     @State private var errorDisplayed = false
-    
-    var accentColor: Color {
-        switch TeaType(rawValue: (tea?.type) ?? "Other") ?? .Other {
-        case .Black:
-            return Color.black
-        case .Green:
-            return Color.green
-        case .Fruit:
-            return Color.mint
-        case .Herbal:
-            return Color.indigo
-        case .Rooibos:
-            return Color.pink
-        case .White:
-            return Color.gray
-        case .Oolong:
-            return Color.orange
-        case .Puerh:
-            return Color.brown
-        case .Other:
-            return Color.red
-        }
-    }
+    @State private var accentColor: Color
     
     init(_ tea: Tea) {
         self.tea = tea
@@ -54,6 +31,7 @@ struct TeaCardEditable: View {
         _teaDescription = State(initialValue: tea.teaDescription ?? "")
         _teaName = State(initialValue: tea.name ?? "Error")
         _teaRating = State(initialValue: Int(tea.rating))
+        _accentColor = State(initialValue: tea.accentColor)
     }
     
     init() {
@@ -64,6 +42,7 @@ struct TeaCardEditable: View {
         _teaDescription = State(initialValue: "")
         _teaName = State(initialValue: "")
         _teaRating = State(initialValue: 0)
+        _accentColor = State(initialValue: .black)
     }
     
     var body: some View {
@@ -92,14 +71,6 @@ struct TeaCardEditable: View {
                             tea!.rating = Int16(teaRating)
                             tea!.teaDescription = teaDescription
                             tea!.notes = teaNotes
-                            
-                            // NOTE: Alternate Way To Edit - Which is better?
-                            //                            tea!.setValue(teaName, forKey: "name")
-                            //                            tea!.setValue(teaType.rawValue, forKey: "type")
-                            //                            tea!.setValue(teaFormat.rawValue, forKey: "format")
-                            //                            tea!.setValue(Int16(teaRating), forKey: "rating")
-                            //                            tea!.setValue(teaDescription, forKey: "teaDescription")
-                            //                            tea!.setValue(teaNotes, forKey: "notes")
                             
                             do {
                                 try viewContext.save()
@@ -148,6 +119,7 @@ struct TeaCardEditable: View {
                     .aspectRatio(contentMode: .fit)
                     .padding()
                     .foregroundColor(tea != nil ? accentColor : .black)
+                    
                 
                 TextField("Name", text: $teaName, prompt: Text("Tea Name"))
                     .font(.title)
@@ -183,6 +155,30 @@ struct TeaCardEditable: View {
                         Text("Oolong").tag(TeaType.Oolong)
                         Text("Other").tag(TeaType.Other)
                     }
+                    .onChange(of: teaType) { newValue in
+                        accentColor = {
+                            switch newValue {
+                            case .Black:
+                                return Color.black
+                            case .Green:
+                                return Color.green
+                            case .Fruit:
+                                return Color.mint
+                            case .Herbal:
+                                return Color.indigo
+                            case .Rooibos:
+                                return Color.pink
+                            case .White:
+                                return Color.gray
+                            case .Oolong:
+                                return Color.orange
+                            case .Puerh:
+                                return Color.brown
+                            case .Other:
+                                return Color.red
+                            }
+                        }()
+                    }
                 }
                 
                 
@@ -192,9 +188,46 @@ struct TeaCardEditable: View {
                     Text("Tea Format:")
                         .bold()
                     Spacer()
-                    Picker("", selection: $teaFormat) {
-                        Image(systemName: "bag.fill").tag(TeaFormat.teaBag)
-                        Image(systemName: "leaf.fill").tag(TeaFormat.looseLeaf)
+                    HStack(spacing: 30) {
+                        // TeaBag Button
+                        Button {
+                            teaFormat = (teaFormat == .teaBag) ? .looseLeaf : .teaBag
+                        } label: {
+                            VStack {
+                                Image(systemName: "bag.fill")
+                                    .foregroundColor(teaFormat == .teaBag ? accentColor : Color(.systemGray))
+                                    .padding(10)
+                                    .background(Color(.systemGray5))
+                                    .cornerRadius(10)
+                                Text("Tea")
+                                    .font(.caption)
+                                    .foregroundColor(teaFormat == .teaBag ? accentColor : Color(.systemGray))
+                                Text("Bag")
+                                    .font(.caption)
+                                    .foregroundColor(teaFormat == .teaBag ? accentColor : Color(.systemGray))
+                            }
+                        }
+                        
+                        // LooseLeaf Button
+                        Button {
+                            teaFormat = (teaFormat == .looseLeaf) ? .teaBag : .looseLeaf
+                        } label: {
+                            VStack {
+                                Image(systemName: "leaf.fill")
+                                    .foregroundColor(teaFormat == .looseLeaf ? accentColor : Color(.systemGray))
+                                    .padding(10)
+                                    .background(Color(.systemGray5))
+                                .cornerRadius(10)
+                                
+                                Text("Loose")
+                                    .font(.caption)
+                                    .foregroundColor(teaFormat == .looseLeaf ? accentColor : Color(.systemGray))
+                                Text("Leaf")
+                                    .font(.caption)
+                                    .foregroundColor(teaFormat == .looseLeaf ? accentColor : Color(.systemGray))
+                            }
+                        }
+
                     }
                 }
                 

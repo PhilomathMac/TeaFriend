@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Tea" representedClassName="Tea" syncable="YES" codeGenerationType="class">
+    <entity name="Tea" representedClassName="Tea" syncable="YES" codeGenerationType="category">
         <attribute name="brand" optional="YES" attributeType="String"/>
         <attribute name="format" attributeType="String" defaultValueString="teaBag"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

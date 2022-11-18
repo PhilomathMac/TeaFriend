@@ -10,29 +10,7 @@ import SwiftUI
 struct TeaCard: View {
     
     var tea: Tea
-        
-    var accentColor: Color {
-        switch TeaType(rawValue: tea.type ?? "") ?? .Other {
-        case .Black:
-            return Color.black
-        case .Green:
-            return Color.green
-        case .Fruit:
-            return Color.mint
-        case .Herbal:
-            return Color.indigo
-        case .Rooibos:
-            return Color.pink
-        case .White:
-            return Color.gray
-        case .Oolong:
-            return Color.orange
-        case .Puerh:
-            return Color.brown
-        case .Other:
-            return Color.red
-        }
-    }
+    
     @State private var isShowingEditTea = false
     @State private var deleteConfirmationDisplayed = false
     @Environment(\.managedObjectContext) private var viewContext
@@ -52,7 +30,7 @@ struct TeaCard: View {
                             .frame(width: 100, height: 90)
                             .aspectRatio(contentMode: .fit)
                             .padding()
-                            .foregroundColor(accentColor)
+                            .foregroundColor(tea.accentColor)
                         Text(tea.name ?? "Error")
                             .font(.title)
                             .padding(.vertical, 10)
@@ -86,7 +64,7 @@ struct TeaCard: View {
                         .bold()
                     Spacer()
                     Text(tea.type ?? "Error")
-                        .foregroundColor(accentColor)
+                        .foregroundColor(tea.accentColor)
                         .padding(7)
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
@@ -102,17 +80,19 @@ struct TeaCard: View {
                         .bold()
                     Spacer()
                     if tea.format == "looseLeaf" {
+                        
                         Image(systemName: "leaf.fill")
-                            .resizable()
-                            .foregroundColor(accentColor)
-                            .frame(width: 30, height: 30)
+                            .foregroundColor(tea.accentColor)
+                            .padding(10)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(10)
                             .onTapGesture {
                                 isShowingEditTea.toggle()
                             }
                     } else {
                         Image(systemName: "bag.fill")
                             .resizable()
-                            .foregroundColor(accentColor)
+                            .foregroundColor(tea.accentColor)
                             .frame(width: 30, height: 30)
                             .onTapGesture {
                                 isShowingEditTea.toggle()

@@ -30,6 +30,7 @@
 		BB839B562926DDEF00762ADF /* FilterByRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B552926DDEF00762ADF /* FilterByRatingView.swift */; };
 		BB839B582926DDFB00762ADF /* FilterByTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B572926DDFB00762ADF /* FilterByTypeView.swift */; };
 		BB839B5A2926DE2700762ADF /* FilterByFormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B592926DE2700762ADF /* FilterByFormatView.swift */; };
+		BB839B5D292822CF00762ADF /* Tea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB839B5B292822CF00762ADF /* Tea+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		BB839B552926DDEF00762ADF /* FilterByRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterByRatingView.swift; sourceTree = "<group>"; };
 		BB839B572926DDFB00762ADF /* FilterByTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterByTypeView.swift; sourceTree = "<group>"; };
 		BB839B592926DE2700762ADF /* FilterByFormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterByFormatView.swift; sourceTree = "<group>"; };
+		BB839B5B292822CF00762ADF /* Tea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tea+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				BA5C0CDF2901D77900D39EBE /* Persistence.swift */,
 				BA5C0CE12901D77900D39EBE /* TeaFriend.xcdatamodeld */,
+				BB839B5B292822CF00762ADF /* Tea+CoreDataClass.swift */,
 				BA6A223B2907745C00AFB230 /* teas.json */,
 			);
 			path = Data;
@@ -263,6 +266,7 @@
 			files = (
 				BB839B562926DDEF00762ADF /* FilterByRatingView.swift in Sources */,
 				BA5C0CE32901D77900D39EBE /* TeaFriend.xcdatamodeld in Sources */,
+				BB839B5D292822CF00762ADF /* Tea+CoreDataClass.swift in Sources */,
 				BA5C0CE02901D77900D39EBE /* Persistence.swift in Sources */,
 				BA6A223829076BA500AFB230 /* ListView.swift in Sources */,
 				BADF156C2901DF6200C09370 /* RatingView.swift in Sources */,

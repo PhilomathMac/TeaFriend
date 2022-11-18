@@ -20,7 +20,7 @@ struct FilteredTeaList: View {
                     // Tea Format Image
                     Image(systemName: tea.format == "looseLeaf" ? "leaf.fill" : "bag.fill")
                         .font(.title3)
-                        .foregroundColor(Color(.systemBlue))
+                        .foregroundColor(tea.accentColor)
                         .padding(10)
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
@@ -40,7 +40,7 @@ struct FilteredTeaList: View {
                             // Tea Type
                             Text(tea.type ?? "Error")
                                 .font(.caption2)
-                                .foregroundColor(Color(.systemBlue))
+                                .foregroundColor(tea.accentColor)
                                 .padding(5)
                                 .background(Color(.systemGray6))
                                 .cornerRadius(5)
