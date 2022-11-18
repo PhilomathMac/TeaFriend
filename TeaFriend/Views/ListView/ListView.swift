@@ -12,12 +12,20 @@ struct ListView: View {
     
     @State private var isShowingAddTea = false
     @State var searchText = ""
+    @State private var isShowingFilters = false
     
     var body: some View {
         NavigationView {
             VStack {
-                //MARK: Move SearchBar into toolbar?
-                SearchBar(searchText: $searchText)
+                HStack {
+                    SearchBar(searchText: $searchText)
+                    Button {
+                        isShowingFilters.toggle()
+                    } label: {
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                            .padding(.trailing)
+                    }
+                }
                 
                 FilteredTeaList(filter: searchText)
             }
@@ -30,6 +38,10 @@ struct ListView: View {
                 }
                 .sheet(isPresented: $isShowingAddTea) {
                     TeaCardEditable()
+                }
+                .sheet(isPresented: $isShowingFilters) {
+                    FilterView()
+                        .presentationDetents([.medium])
                 }
             }
             .onAppear() {
