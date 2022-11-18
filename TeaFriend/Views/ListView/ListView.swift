@@ -11,8 +11,11 @@ struct ListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State private var isShowingAddTea = false
-    @State var searchText = ""
     @State private var isShowingFilters = false
+    @State var searchText = ""
+    @State var filteredRating = 0
+    @State var filteredType: TeaType? = nil
+    @State var filteredFormat: TeaFormat? = nil
     
     var body: some View {
         NavigationView {
@@ -40,7 +43,7 @@ struct ListView: View {
                     TeaCardEditable()
                 }
                 .sheet(isPresented: $isShowingFilters) {
-                    FilterView()
+                    FilterView(filteredRating: $filteredRating, filteredType: $filteredType, filteredFormat: $filteredFormat)
                         .presentationDetents([.medium])
                 }
             }

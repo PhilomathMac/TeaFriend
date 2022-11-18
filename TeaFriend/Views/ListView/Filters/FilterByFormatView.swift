@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FilterByFormatView: View {
-    @State var chosenFormat: TeaFormat?
+    @Binding var filteredFormat: TeaFormat?
     
     var body: some View {
         HStack {
@@ -19,10 +19,10 @@ struct FilterByFormatView: View {
             HStack(spacing: 30) {
                 // TeaBag Button
                 Button {
-                    chosenFormat = (chosenFormat == .teaBag) ? nil : .teaBag
+                    filteredFormat = (filteredFormat == .teaBag) ? nil : .teaBag
                 } label: {
                     Image(systemName: "bag.fill")
-                        .foregroundColor(chosenFormat == .teaBag ? Color(.systemBlue) : Color(.systemGray))
+                        .foregroundColor(filteredFormat == .teaBag ? Color(.systemBlue) : Color(.systemGray))
                         .padding(10)
                         .background(Color(.systemGray5))
                         .cornerRadius(10)
@@ -30,10 +30,10 @@ struct FilterByFormatView: View {
                 
                 // LooseLeaf Button
                 Button {
-                    chosenFormat = (chosenFormat == .looseLeaf) ? nil : .looseLeaf
+                    filteredFormat = (filteredFormat == .looseLeaf) ? nil : .looseLeaf
                 } label: {
                     Image(systemName: "leaf.fill")
-                        .foregroundColor(chosenFormat == .looseLeaf ? Color(.systemGreen) : Color(.systemGray))
+                        .foregroundColor(filteredFormat == .looseLeaf ? Color(.systemBlue) : Color(.systemGray))
                         .padding(10)
                         .background(Color(.systemGray5))
                         .cornerRadius(10)
@@ -45,7 +45,10 @@ struct FilterByFormatView: View {
 }
 
 struct FilterByFormatView_Previews: PreviewProvider {
+    
+    @State static var filteredFormat = TeaFormat.looseLeaf as TeaFormat?
+    
     static var previews: some View {
-        FilterByFormatView()
+        FilterByFormatView(filteredFormat: $filteredFormat)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FilterByTypeView: View {
     
-    @State var chosenTeaType: TeaType?
+    @Binding var filteredType: TeaType?
     
     var body: some View {
         HStack {
@@ -17,7 +17,7 @@ struct FilterByTypeView: View {
                 .bold()
                 .padding(.vertical)
             Spacer()
-            Picker("", selection: $chosenTeaType) {
+            Picker("", selection: $filteredType) {
                 Text("Any").tag(nil as TeaType?)
                 Text("Black").tag(TeaType.Black as TeaType?)
                 Text("Green").tag(TeaType.Green as TeaType?)
@@ -33,7 +33,10 @@ struct FilterByTypeView: View {
 }
 
 struct FilterByTypeView_Previews: PreviewProvider {
+    
+    @State static var filteredType = TeaType.Black as TeaType?
+    
     static var previews: some View {
-        FilterByTypeView(chosenTeaType: .Black)
+        FilterByTypeView(filteredType: $filteredType)
     }
 }

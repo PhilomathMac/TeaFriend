@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FilterView: View {
+    @Binding var filteredRating: Int
+    @Binding var filteredType: TeaType?
+    @Binding var filteredFormat: TeaFormat?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
@@ -15,24 +19,31 @@ struct FilterView: View {
                     .font(.title)
                 Spacer()
                 Button {
-                    // MARK: Clear Filters
+                    filteredRating = 0
+                    filteredType = nil
+                    filteredFormat = nil
                 } label: {
                     Text("Reset Filters")
                 }
             }
             Divider()
-            FilterByRatingView()
+            FilterByRatingView(filteredRating: $filteredRating)
             Divider()
-            FilterByTypeView()
+            FilterByTypeView(filteredType: $filteredType)
             Divider()
-            FilterByFormatView()
+            FilterByFormatView(filteredFormat: $filteredFormat)
         }
         .padding()
     }
 }
 
 struct FilterView_Previews: PreviewProvider {
+    
+    @State static var rating = 2
+    @State static var type = TeaType.Black as TeaType?
+    @State static var format = TeaFormat.looseLeaf as TeaFormat?
+    
     static var previews: some View {
-        FilterView()
+        FilterView(filteredRating: $rating, filteredType: $type, filteredFormat: $format)
     }
 }
