@@ -2,7 +2,7 @@
 //  ResignKeyboardHelper.swift
 //  TeaFriend
 //
-//  Created by user3687284 - found on StackOverflow
+//  Created by user3687284 - found on StackOverflow (https://stackoverflow.com/questions/58540763/swiftui-close-keyboard-on-scroll)
 //
 
 import SwiftUI
